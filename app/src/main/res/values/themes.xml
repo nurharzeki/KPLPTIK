@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.KPLPTIK" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
+
         <item name="colorPrimary">@color/hijauunand</item>
         <item name="colorButtonNormal">@color/hijauunand</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
