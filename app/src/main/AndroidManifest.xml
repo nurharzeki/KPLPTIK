@@ -27,6 +27,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ProfileDosenActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ProfileMahasiswaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".HomeDosenActivity"
             android:exported="false">
             <meta-data
@@ -36,14 +50,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HomeMahasiswaActivity"
-            android:exported="true">
-
+            
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
 
@@ -55,7 +62,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
+        
+        <activity
+            android:name=".HomeMahasiswaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
