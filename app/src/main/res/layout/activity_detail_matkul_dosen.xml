@@ -6,26 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".DetailMatkulDosenActivity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="738dp"
+        android:layout_height="702dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="404dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/background_green_circle" />
+
     <TextView
         android:id="@+id/namaMatkulDosen"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:text="NAMA MATA KULIAH DOSEN"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="367dp"
         android:layout_height="261dp"
-        android:outlineAmbientShadowColor="@color/black"
+        android:background="@drawable/borderblack"
         app:cardBackgroundColor="#EDEDED"
         app:cardCornerRadius="25dp"
         app:cardElevation="2dp"
