@@ -15,7 +15,7 @@
         
         <activity
             android:name=".ListKHSSemesterMahasiswa"
-            android:exported="false"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -23,7 +23,7 @@
         
         <activity
             android:name=".DetailMatkulDosenActivity"
-            android:exported="false"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
