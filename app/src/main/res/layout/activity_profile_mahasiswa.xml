@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileMahasiswaActivity">
+
+    <ImageView
+        android:id="@+id/bg_green_profile"
+        android:layout_width="411dp"
+        android:layout_height="382dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:clipToOutline="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_green" />
+
+    <ImageView
+        android:id="@+id/pp_mahasiswa_login"
+        android:layout_width="181dp"
+        android:layout_height="181dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/male_icon" />
+
+    <TextView
+        android:id="@+id/nama_mahasiswa_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Nama Mahasiswa yang Login"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pp_mahasiswa_login" />
+
+    <TextView
+        android:id="@+id/nim_mahasiswa_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light_italic"
+        android:text="NIM Isinya Angka"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nama_mahasiswa_login" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_green_profile">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="379dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="21dp"
+            android:orientation="horizontal"
+            app:cardCornerRadius="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bg_green_profile">>
+
+            <TextView
+                android:id="@+id/email_mahasiswa_login"
+                android:layout_width="245dp"
+                android:layout_height="53dp"
+                android:layout_gravity="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="simahasiswayglogin@gmail.com"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/email_mahasiswa_login2"
+                android:layout_width="134dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="E-Mail"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="379dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:cardCornerRadius="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card1">>
+
+            <TextView
+                android:id="@+id/jurusan_mahasiswa_login"
+                android:layout_width="245dp"
+                android:layout_height="53dp"
+                android:layout_gravity="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="Sistem Informasi"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/jurusan_mahasiswa_login2"
+                android:layout_width="134dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Jurusan"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card3"
+            android:layout_width="379dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:cardCornerRadius="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card2">>
+
+            <TextView
+                android:id="@+id/fakultas_mahasiswa_login"
+                android:layout_width="245dp"
+                android:layout_height="53dp"
+                android:layout_gravity="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="Teknologi Informasi"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/fakultas_mahasiswa_login2"
+                android:layout_width="134dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Fakultas"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card4"
+            android:layout_width="379dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:cardCornerRadius="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card3">>
+
+            <TextView
+                android:id="@+id/gender_mahasiswa_login"
+                android:layout_width="245dp"
+                android:layout_height="53dp"
+                android:layout_gravity="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="Laki-laki/Perempuan"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/gender_mahasiswa_login2"
+                android:layout_width="134dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Jenis Kelamin"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card5"
+            android:layout_width="379dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:cardCornerRadius="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card4">>
+
+            <TextView
+                android:id="@+id/status_mahasiswa_login"
+                android:layout_width="245dp"
+                android:layout_height="53dp"
+                android:layout_gravity="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="Aktif/NonAktif"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/status_mahasiswa_login2"
+                android:layout_width="134dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Status"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonLoginMahasiswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:background="#F44336"
+            android:text="Logout"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textLayoutPassword"
+            app:layout_constraintStart_toStartOf="@+id/textLayoutPassword"
+            app:layout_constraintTop_toBottomOf="@+id/textLayoutPassword" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
