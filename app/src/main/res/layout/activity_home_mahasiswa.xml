@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".HomeMahasiswaActivity">
 
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="595dp"
+        android:layout_height="515dp"
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_green_circle" />
+
     <TextView
         android:id="@+id/welcomeMahasiswa"
         android:layout_width="wrap_content"
