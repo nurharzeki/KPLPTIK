@@ -6,73 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".HomeMahasiswaActivity">
 
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="595dp"
+        android:layout_height="515dp"
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_green_circle" />
+
     <TextView
         android:id="@+id/welcomeMahasiswa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:text="Welcome"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
-
-    <TextView
-        android:id="@+id/namaMahasiswahome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NAMA MAHASISWA"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/welcomeMahasiswa"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/welcomeMahasiswa"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeMahasiswa"
-        app:layout_constraintVertical_bias="0.013" />
-
-    <TextView
-        android:id="@+id/nimHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NIM"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/namaMahasiswahome"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/namaMahasiswahome"
-        app:layout_constraintTop_toBottomOf="@+id/namaMahasiswahome"
-        app:layout_constraintVertical_bias="0.015" />
+        app:layout_constraintVertical_bias="0.069" />
 
     <TextView
         android:id="@+id/pilihanHomeMahasiswa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:text="Pilih Aktifitas Kamu"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nimHome"
-        app:layout_constraintVertical_bias="0.121" />
-
-    <ImageView
-        android:id="@+id/imageViewMahasiswa"
-        android:layout_width="50dp"
-        android:layout_height="52dp"
-        android:src="@drawable/ikonprofil1_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.107" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardKRS"
@@ -85,9 +56,10 @@
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pilihanHomeMahasiswa"
-        app:layout_constraintVertical_bias="0.076">
+        app:layout_constraintVertical_bias="0.057">
 
         <ImageView
             android:id="@+id/imageView15"
@@ -95,6 +67,49 @@
             android:layout_height="wrap_content"
             android:src="@drawable/group_5375__1_" />
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageViewMahasiswa"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ikonprofil1_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <TextView
+        android:id="@+id/namaMahasiswahome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="NAMA MAHASISWA"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/welcomeMahasiswa"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/welcomeMahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeMahasiswa"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <TextView
+        android:id="@+id/nimHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="NIM"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/namaMahasiswahome"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/namaMahasiswahome"
+        app:layout_constraintTop_toBottomOf="@+id/namaMahasiswahome"
+        app:layout_constraintVertical_bias="0.008" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardKHS"
@@ -110,7 +125,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cardKRS"
         app:layout_constraintTop_toBottomOf="@+id/cardKRS"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.004">
 
 
         <ImageView
