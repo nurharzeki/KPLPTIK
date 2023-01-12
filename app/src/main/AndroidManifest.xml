@@ -27,15 +27,86 @@
                 android:value="" />
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".LoginActivity"
             android:exported="false">
+=======
+            android:name=".DetailMahasiswaDosenActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+
+        <activity
+            android:name=".ListMatkulDiampuActivity"
+            android:exported="false" >
+>>>>>>> 2cc76bd0256b1a5a666fbec4861033f1cf28be5d
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".HomeDosen"
             android:exported="true">
+=======
+            android:name=".ListKHSSemesterMahasiswa"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DetailMatkulDosenActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DetailMatkulMahasiswaActivity"
+            android:exported="true" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ProfileDosenActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ProfileMahasiswaActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HomeDosenActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HomeMahasiswaActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" >
+>>>>>>> 2cc76bd0256b1a5a666fbec4861033f1cf28be5d
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

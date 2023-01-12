@@ -2,6 +2,13 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/poppins</item>
+<<<<<<< HEAD
         <item>@font/poppins_bold</item>
+=======
+        <item>@font/poppins_light_italic</item>
+        <item>@font/poppins_medium</item>
+        <item>@font/poppins_semibold</item>
+        <item>@font/poppins_thin</item>
+>>>>>>> 2cc76bd0256b1a5a666fbec4861033f1cf28be5d
     </array>
 </resources>
