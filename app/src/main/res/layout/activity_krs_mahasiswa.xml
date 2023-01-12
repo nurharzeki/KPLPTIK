@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="411dp"
-        android:layout_height="270dp"
+        android:layout_height="271dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ellipse_17" />
@@ -34,15 +34,14 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Kartu Rencana Studi"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="26sp"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_krs_kelas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView4"

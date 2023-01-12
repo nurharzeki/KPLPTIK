@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MhsPaActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="411dp"
+        android:layout_height="270dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ellipse_17" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_mhs_pa"
         android:layout_width="379dp"
@@ -17,5 +25,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_mhs_pa" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="List Mahasiswa Bimbingan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_mhs_pa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

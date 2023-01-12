@@ -3,12 +3,19 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/poppins</item>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <item>@font/poppins_bold</item>
 =======
+=======
+        <item>@font/poppins_bold</item>
+>>>>>>> 3aa979cc38365baad1a651eb2f66fcc3cb3970d3
         <item>@font/poppins_light_italic</item>
         <item>@font/poppins_medium</item>
         <item>@font/poppins_semibold</item>
         <item>@font/poppins_thin</item>
+<<<<<<< HEAD
 >>>>>>> 2cc76bd0256b1a5a666fbec4861033f1cf28be5d
+=======
+>>>>>>> 3aa979cc38365baad1a651eb2f66fcc3cb3970d3
     </array>
 </resources>
