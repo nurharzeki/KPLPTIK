@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MhsPaActivity">
 
+    <ImageView
+        android:id="@+id/imageView69"
+        android:layout_width="738dp"
+        android:layout_height="702dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="404dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/background_green_circle" />
+
+    <TextView
+        android:id="@+id/textViewjdl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="List Mahasiswa Bimbingan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_mhs_pa"
         android:layout_width="379dp"

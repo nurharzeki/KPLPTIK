@@ -7,12 +7,14 @@
     tools:context=".KrsMahasiswaActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="411dp"
-        android:layout_height="270dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ellipse_17" />
+        android:id="@+id/imageView69"
+        android:layout_width="738dp"
+        android:layout_height="702dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="404dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/background_green_circle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_krs_kelas"
