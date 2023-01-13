@@ -41,7 +41,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".KrsMahasiswaActivity"
+            android:name=".ListKrsMahasiswaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -62,24 +62,12 @@
         <activity
             android:name=".ListMatkulDiampuActivity"
             android:exported="false" >
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".ListKHSSemesterMahasiswa"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".DetailMatkulDosenActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".DetailMatkulMahasiswaActivity"
             android:exported="true" >
