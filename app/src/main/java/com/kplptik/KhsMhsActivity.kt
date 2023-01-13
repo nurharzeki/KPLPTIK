@@ -3,10 +3,11 @@ package com.kplptik
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class ListKrsMahasiswaActivity : AppCompatActivity() {
+
+class KhsMhsActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list_krs_mahasiswa)
-
+        setContentView(R.layout.activity_khs_mhs)
     }
 }
