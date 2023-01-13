@@ -41,20 +41,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".KrsMahasiswaActivity"
+            android:name=".ListKrsMahasiswaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-<<<<<<< HEAD
-<<<<<<< HEAD
-            android:name=".LoginActivity"
-            android:exported="false">
-=======
-=======
->>>>>>> 3aa979cc38365baad1a651eb2f66fcc3cb3970d3
             android:name=".DetailMahasiswaDosenActivity"
             android:exported="false" >
             <meta-data
@@ -69,35 +62,14 @@
         <activity
             android:name=".ListMatkulDiampuActivity"
             android:exported="false" >
-<<<<<<< HEAD
->>>>>>> 2cc76bd0256b1a5a666fbec4861033f1cf28be5d
-=======
->>>>>>> 3aa979cc38365baad1a651eb2f66fcc3cb3970d3
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-<<<<<<< HEAD
-<<<<<<< HEAD
-            android:name=".HomeDosen"
-            android:exported="true">
-=======
-=======
->>>>>>> 3aa979cc38365baad1a651eb2f66fcc3cb3970d3
-            android:name=".ListKHSSemesterMahasiswa"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".DetailMatkulDosenActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
+
+
         <activity
             android:name=".DetailMatkulMahasiswaActivity"
             android:exported="true" >
@@ -136,10 +108,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" >
-<<<<<<< HEAD
->>>>>>> 2cc76bd0256b1a5a666fbec4861033f1cf28be5d
-=======
->>>>>>> 3aa979cc38365baad1a651eb2f66fcc3cb3970d3
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
