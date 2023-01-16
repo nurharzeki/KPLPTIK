@@ -24,7 +24,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="Login"
         android:textColor="#000000"
-        android:textSize="48sp"
+        android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,11 +82,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:onClick="onClickListener"
-        android:text="Login"
+        android:text="Login Dosen"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textLayoutPassword"
         app:layout_constraintStart_toStartOf="@+id/textLayoutPassword"
         app:layout_constraintTop_toBottomOf="@+id/textLayoutPassword" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonLogin2ClickListener"
+        android:text="Login Mahasiswa"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+        app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

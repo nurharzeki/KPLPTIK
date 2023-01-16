@@ -15,4 +15,9 @@ class LoginActivity : AppCompatActivity() {
         val homeDosenIntent = Intent(this@LoginActivity, HomeDosenActivity::class.java)
         startActivity(homeDosenIntent)
     }
+
+    fun onButtonLogin2ClickListener(view: View) {
+        val homeMahasiswaIntent = Intent(this@LoginActivity, HomeMahasiswaActivity::class.java)
+        startActivity(homeMahasiswaIntent)
+    }
 }
