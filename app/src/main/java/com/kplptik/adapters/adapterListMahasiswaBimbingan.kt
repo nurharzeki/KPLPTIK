@@ -22,6 +22,7 @@ class adapterListMahasiswaBimbingan (private val data: ArrayList<MahasiswaBimbin
     fun setOnClickListener(listener: clickListener) {
         listMahasiswaBimbinganListener = listener
     }
+
     //AMAN====================
 
 
