@@ -65,20 +65,24 @@
             android:id="@+id/imageView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/group_5375__1_" />
+            android:onClick="onKrsClick"
+            android:src="@drawable/group_5375__1_"
+            tools:ignore="SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageViewMahasiswa"
         android:layout_width="50dp"
         android:layout_height="52dp"
+        android:onClick="onProfilMhsClick"
         android:src="@drawable/ikonprofil1_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.076"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/namaMahasiswahome"
@@ -132,7 +136,9 @@
             android:id="@+id/imageView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/component_1" />
+            android:onClick="onKhsClick"
+            android:src="@drawable/component_1"
+            tools:ignore="SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
