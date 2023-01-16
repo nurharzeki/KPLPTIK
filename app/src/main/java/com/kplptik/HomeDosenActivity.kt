@@ -13,8 +13,9 @@ class HomeDosenActivity : AppCompatActivity() {
     }
 
     fun onMhsBimbinganClick(view: View) {
-        Toast.makeText(this, "Berhasil klik", Toast.LENGTH_SHORT).show()
-
+//        Toast.makeText(this, "Berhasil klik", Toast.LENGTH_SHORT).show()
+        val listMhsIntent = Intent(this@HomeDosenActivity, ListMahasiswaBimbingan::class.java)
+        startActivity(listMhsIntent)
     }
 
     fun onListMatkulClick(view: View) {
