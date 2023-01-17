@@ -2,10 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/itemMatkul"
-    android:layout_width="match_parent"
+    android:layout_width="366dp"
     android:layout_height="65dp"
     android:layout_marginTop="3dp"
     android:layout_marginBottom="3dp"
+    android:layout_margin="4dp"
     app:cardBackgroundColor="@color/abuabu1"
     app:cardCornerRadius="6dp">
 
