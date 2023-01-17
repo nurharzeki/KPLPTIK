@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
     fun onClickListener(view: View) {
         val homeDosenIntent = Intent(this@LoginActivity, HomeDosenActivity::class.java)
         startActivity(homeDosenIntent)
-        Toast.makeText(this, "masok", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "masok", Toast.LENGTH_SHORT).show()
     }
 
     fun onButtonLogin2ClickListener(view: View) {

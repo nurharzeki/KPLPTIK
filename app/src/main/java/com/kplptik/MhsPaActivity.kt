@@ -40,6 +40,7 @@ class MhsPaActivity : AppCompatActivity() {
         adapter.setOnClickListener(object: MhsPaAdapter.clickListener{
             override fun onItemClick(position: Int){
                 val detailMhsPaIntent = Intent (this@MhsPaActivity, DetailMahasiswaDosenActivity::class.java)
+                startActivity(detailMhsPaIntent)
             }
         })
 
