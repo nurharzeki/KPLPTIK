@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileDosenActivity"
-    android:background="@drawable/background2">
+    tools:context=".ProfileDosenActivity">
 
     <ImageView
         android:id="@+id/bg_green_profile2"
@@ -81,7 +80,7 @@
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bg_green_profile2">>
+                app:layout_constraintTop_toBottomOf="@+id/bg_green_profile2">
 
                 <TextView
                     android:id="@+id/email_dosen_login"
@@ -115,7 +114,7 @@
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card1">>
+                app:layout_constraintTop_toBottomOf="@+id/card1">
 
                 <TextView
                     android:id="@+id/jurusan_dosen_login"
@@ -149,7 +148,7 @@
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card2">>
+                app:layout_constraintTop_toBottomOf="@+id/card2">
 
                 <TextView
                     android:id="@+id/fakultas_dosen_login"
@@ -183,7 +182,7 @@
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card3">>
+                app:layout_constraintTop_toBottomOf="@+id/card3">
 
                 <TextView
                     android:id="@+id/gender_dosen_login"
