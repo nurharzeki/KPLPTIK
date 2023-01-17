@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailListKHSMatkulActivity">
+    tools:context=".ListDetailKHSMatkulActivity">
 
     <ImageView
         android:id="@+id/imageView32"
@@ -77,13 +77,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
 
+        android:id="@+id/rvListDetailKhs"
         android:layout_width="401dp"
         android:layout_height="560dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
-    tools:listitem="@layout/list_detail_khs_matkul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ipsmatkul" />
+        app:layout_constraintTop_toBottomOf="@+id/ipsmatkul"
+        tools:listitem="@layout/list_detail_khs_matkul" />
 </androidx.constraintlayout.widget.ConstraintLayout>
