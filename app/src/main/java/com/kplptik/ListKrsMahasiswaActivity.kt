@@ -38,6 +38,7 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
         adapter.setOnClickListener(object: KrsMahasiswaAdapter.clickListener{
             override fun onItemClick(position: Int) {
                 val detailKrsMhsIntent = Intent(this@ListKrsMahasiswaActivity, DetailMatkulMahasiswaActivity::class.java)
+                startActivity(detailKrsMhsIntent)
             }
 
         })
