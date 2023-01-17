@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileMahasiswaActivity">
+    tools:context=".ProfileMahasiswaActivity"
+    android:background="@drawable/background2">
 
     <ImageView
         android:id="@+id/bg_green_profile"
@@ -80,7 +81,7 @@
             app:cardCornerRadius="27dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bg_green_profile">>
+            app:layout_constraintTop_toBottomOf="@+id/bg_green_profile">
 
             <TextView
                 android:id="@+id/email_mahasiswa_login"
@@ -114,7 +115,7 @@
             app:cardCornerRadius="27dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card1">>
+            app:layout_constraintTop_toBottomOf="@+id/card1">
 
             <TextView
                 android:id="@+id/jurusan_mahasiswa_login"
@@ -148,7 +149,7 @@
             app:cardCornerRadius="27dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card2">>
+            app:layout_constraintTop_toBottomOf="@+id/card2">
 
             <TextView
                 android:id="@+id/fakultas_mahasiswa_login"
@@ -182,7 +183,7 @@
             app:cardCornerRadius="27dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card3">>
+            app:layout_constraintTop_toBottomOf="@+id/card3">
 
             <TextView
                 android:id="@+id/gender_mahasiswa_login"
@@ -216,7 +217,7 @@
             app:cardCornerRadius="27dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card4">>
+            app:layout_constraintTop_toBottomOf="@+id/card4">
 
             <TextView
                 android:id="@+id/status_mahasiswa_login"
