@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailListKHSMatkulActivity">
+    tools:context=".ListDetailKHSMatkulActivity">
 
     <ImageView
         android:id="@+id/imageView32"
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Kartu Hasil Studi"
-        android:textSize="24dp"
-        android:textColor="@color/black"
+        android:textColor="#003200"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,23 +33,24 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins"
         android:text="Semester :"
-        android:textColor="@color/black"
-        android:textSize="12dp"
+        android:textColor="#003200"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/semesterMatkul"
-        android:layout_width="116dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="ganjil/genap 20XX"
-        android:textSize="12dp"
-        android:textColor="@color/black"
+        android:textColor="#003200"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -58,32 +59,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins"
         android:text="IPS :"
-        android:textColor="@color/black"
-        android:textSize="12dp"
+        android:textColor="#003200"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/ipsmatkul"
-        android:layout_width="49dp"
-        android:layout_height="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="0.00"
-        android:textColor="@color/black"
-        android:textSize="12dp"
+        android:textColor="#003200"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/semesterMatkul"
         app:layout_constraintTop_toBottomOf="@+id/semesterMatkul" />
 
     <androidx.recyclerview.widget.RecyclerView
 
+        android:id="@+id/rvListDetailKhs"
         android:layout_width="401dp"
         android:layout_height="560dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
-    tools:listitem="@layout/list_detail_khs_matkul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ipsmatkul" />
+        app:layout_constraintTop_toBottomOf="@+id/ipsmatkul"
+        tools:listitem="@layout/list_detail_khs_matkul" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KhsMhsActivity">
+    tools:context=".ListKhsMhsActivity">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -14,40 +14,65 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ellipse_17" />
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="738dp"
+        android:layout_height="702dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="404dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/background_green_circle" />
+
     <TextView
         android:id="@+id/KhsSemester"
-        android:layout_width="160dp"
-        android:layout_height="26dp"
+        android:layout_width="376dp"
+        android:layout_height="0dp"
         android:layout_marginTop="64dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="Kartu Hasil Studi"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        android:textColor="#00320A"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ipk"
+        android:id="@+id/textviewsekian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="@font/poppins"
-        android:text="IPK : 0.00"
-        android:textColor="#000000"
+        android:text="IPK : "
+        android:textColor="#003200"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/KhsSemester"
         app:layout_constraintStart_toStartOf="@+id/KhsSemester"
         app:layout_constraintTop_toBottomOf="@+id/KhsSemester" />
 
+    <TextView
+        android:id="@+id/ipk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="3.52"
+        android:textColor="#003200"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textviewsekian"
+        app:layout_constraintTop_toBottomOf="@+id/KhsSemester" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListKhsSemester"
-        android:layout_width="357dp"
-        android:layout_height="578dp"
-        android:layout_marginTop="8dp"
-        tools:listitem="@layout/item_khs_mhs"
+        android:layout_width="370dp"
+        android:layout_height="520dp"
+        android:layout_marginTop="16dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ipk" />
+        app:layout_constraintTop_toBottomOf="@+id/textviewsekian" />
 </androidx.constraintlayout.widget.ConstraintLayout>
