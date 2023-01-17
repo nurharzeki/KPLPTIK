@@ -22,7 +22,7 @@ class HomeMahasiswaActivity : AppCompatActivity() {
     }
 
     fun onKhsClick(view: View) {
-        val khsIntent = Intent(this@HomeMahasiswaActivity, KhsMhsActivity::class.java)
+        val khsIntent = Intent(this@HomeMahasiswaActivity, ListKhsMhsActivity::class.java)
         startActivity(khsIntent)
     }
 
