@@ -1,20 +1,23 @@
 package com.kplptik.adapters
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.kplptik.DetailMatkulDosenActivity
+import com.kplptik.APIdatamodels.MatkulDiampuModel.DataItem
 import com.kplptik.R
-import com.kplptik.models.MatkulDiampu
 
-class adapterMatkulDiampu (private val data: ArrayList<MatkulDiampu>):
+class adapterMatkulDiampu (private var data: ArrayList<DataItem>):
 
     RecyclerView.Adapter<adapterMatkulDiampu.listMatkulHolder>() {
 
     private lateinit var listMatkulListener: clickListener
+
+    fun setListMatkul (data: ArrayList<DataItem>){
+        this.data = data
+        notifyDataSetChanged()
+    }
 
     interface clickListener {
         fun onItemClick(position: Int)
@@ -29,10 +32,11 @@ class adapterMatkulDiampu (private val data: ArrayList<MatkulDiampu>):
         private val jadwal: TextView = itemView.findViewById(R.id.jadwalitem)
         private val ruangan: TextView = itemView.findViewById(R.id.ruangGedungItem)
 
-        fun bind(data: MatkulDiampu){
-            nama_Matkul.text = data.nama_matkul
-            jadwal.text = data.jadwal
-            ruangan.text = data.ruang_kuliah
+        fun bind(data: DataItem){
+
+            nama_Matkul.text = data.namaMk
+            jadwal.text = data.waktu
+            ruangan.text = data.kodeRuang
         }
 
         init {

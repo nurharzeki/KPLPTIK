@@ -41,7 +41,7 @@ class AdapterListDetailKhsMatkul(private val data: ArrayList<ListDetailKhsMatkul
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListDetailKhsMatkulHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_detail_khs_matkul,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_list_detail_khs_matkul,parent,false)
         return ListDetailKhsMatkulHolder(view,listDetailKhsMatkulListener)
     }
 
