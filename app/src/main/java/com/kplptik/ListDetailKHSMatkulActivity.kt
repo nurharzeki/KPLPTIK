@@ -3,6 +3,7 @@ package com.kplptik
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ class ListDetailKHSMatkulActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListDetailKhsMatkulBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         val data = ArrayList<ListDetailKhsMatkul>()
         data.add(ListDetailKhsMatkul(1,"Manajemen Proyek Sistem Informasi",3,"A"))

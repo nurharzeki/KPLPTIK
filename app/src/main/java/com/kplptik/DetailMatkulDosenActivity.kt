@@ -3,6 +3,7 @@ package com.kplptik
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.TextView
 import com.kplptik.databinding.ActivityDetailMatkulDosenBinding
 import com.kplptik.models.MatkulDiampu
@@ -14,6 +15,7 @@ class DetailMatkulDosenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMatkulDosenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
 
         val data: MatkulDiampu = MatkulDiampu(1,"DSIPW001","3 sks","Prof.Kemal.com","Pemograman Web", "Senin (08.00 - 12.00)", "H2.4")
