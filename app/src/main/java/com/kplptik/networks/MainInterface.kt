@@ -2,6 +2,7 @@ package com.kplptik.networks
 
 
 import com.kplptik.APIdatamodels.MatkulDiampuModel.MatkulDiampuResponse
+import com.kplptik.APIdatamodels.ProfilDosenModel.ProfilDosenResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -14,4 +15,10 @@ interface MainInterface {
         @Header("Authorization") token: String,
         @Path("nip-dosen") nip: String
     ): Call<MatkulDiampuResponse>
+
+    @GET("/api/profil-dosen/{nip-dosen}")
+    fun profildosen(
+        @Header("Authorization") token: String,
+        @Path("nip-dosen") nip: String
+    ): Call<ProfilDosenResponse>
 }
