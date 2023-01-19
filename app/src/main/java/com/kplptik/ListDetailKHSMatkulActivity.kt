@@ -22,9 +22,12 @@ class ListDetailKHSMatkulActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val data = ArrayList<ListDetailKhsMatkul>()
-        data.add(ListDetailKhsMatkul(1,"MPSI","3 SKS","A++"))
-        data.add(ListDetailKhsMatkul(1,"MPSI","3 SKS","A++"))
-        data.add(ListDetailKhsMatkul(1,"MPSI","3 SKS","A++"))
+        data.add(ListDetailKhsMatkul(1,"Manajemen Proyek Sistem Informasi",3,"A"))
+        data.add(ListDetailKhsMatkul(2,"Pemrograman Teknologi Bergerak",3,"B+"))
+        data.add(ListDetailKhsMatkul(3,"E Bisnis",3,"B-"))
+        data.add(ListDetailKhsMatkul(4,"Analisa dan erancangan Sistem, Informasi",3,"A"))
+        data.add(ListDetailKhsMatkul(5,"Tata Kelola",3,"B+"))
+        data.add(ListDetailKhsMatkul(6,"Proyek pengembangan Sistem Infoermasi",3,"B-"))
 
         rvlistdetailkhsmatkul = binding.rvListDetailKhs
         adapter = AdapterListDetailKhsMatkul(data)
@@ -32,11 +35,11 @@ class ListDetailKHSMatkulActivity : AppCompatActivity() {
         rvlistdetailkhsmatkul.layoutManager = LinearLayoutManager(this)
         rvlistdetailkhsmatkul.adapter = adapter
 
-        /*adapter.setOnClickListener(object : AdapterListDetailKhsMatkul.clickListener{
+        adapter.setOnClickListener(object : AdapterListDetailKhsMatkul.clickListener{
             override fun onItemClick(position: Int) {
-                val intent = Intent(this@ListMatkulDiampuActivity, DetailMatkulDosenActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this@ListDetailKHSMatkulActivity, DetailMatkulDosenActivity::class.java)
+//                startActivity(intent)
             }
-        })*/
+        })
     }
 }

@@ -9,6 +9,7 @@
     android:layout_marginTop="8dp"
     android:layout_marginEnd="4dp"
     android:layout_marginBottom="16dp"
+    android:layout_margin="4dp"
     app:cardBackgroundColor="#EDEDED"
     app:cardCornerRadius="8dp">
 
@@ -17,6 +18,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/borderblack">
+
+        <TextView
+            android:id="@+id/nilaiKhsMhs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="A"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/namaMatkulKhs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/namaMatkulKhs"
+            app:layout_constraintTop_toTopOf="@+id/namaMatkulKhs" />
 
         <TextView
             android:id="@+id/namaMatkulKhs"
@@ -68,23 +83,6 @@
             app:layout_constraintStart_toEndOf="@+id/namaMatkulKhs"
             app:layout_constraintTop_toTopOf="@+id/namaMatkulKhs"
             app:srcCompat="@drawable/base_circle" />
-
-        <TextView
-            android:id="@+id/nilaiKhsMhs"
-            android:layout_width="35dp"
-            android:layout_height="33dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:text="A"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-            app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/imageView5"
-            app:layout_constraintVertical_bias="0.47" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -21,6 +21,19 @@
             android:id="@+id/semesterMhs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="1"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewSemester"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewSemester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_semibold"
@@ -40,7 +53,7 @@
             android:text="ganjil/genap 20XX"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/semesterMhs"
+            app:layout_constraintStart_toStartOf="@+id/textViewSemester"
             app:layout_constraintTop_toBottomOf="@+id/semesterMhs" />
 
         <TextView
@@ -77,19 +90,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textsks"
             app:layout_constraintTop_toBottomOf="@+id/textsks" />
-
-        <TextView
-            android:id="@+id/textviewss"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
-            android:fontFamily="@font/poppins"
-            android:text="IPS : "
-            android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="@+id/ips"
-            app:layout_constraintEnd_toStartOf="@+id/ips"
-            app:layout_constraintTop_toBottomOf="@+id/textsks"
-            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView16"
