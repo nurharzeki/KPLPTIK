@@ -3,6 +3,7 @@ package com.kplptik
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.adapters.KrsMahasiswaAdapter
@@ -17,6 +18,7 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListKrsMahasiswaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         val data = ArrayList<KrsMahasiswa>()
         data.add(KrsMahasiswa("PBO C","Rabu (15.00 - 17.00)","H 2.5"))
