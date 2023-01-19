@@ -5,6 +5,7 @@ import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.WindowManager
 import android.widget.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +24,7 @@ class ListKhsMhsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListKhsMhsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         val data = ArrayList<ListKhsMatkul>()
         data.add(ListKhsMatkul(1,"Ganjil 2020",22, 3.55F))
