@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListDetailKhsDosenActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/rvListDetailKhsDosen"
+        android:layout_width="370dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ipsmatkul2"/>
+
+    <TextView
+        android:id="@+id/ipsmatkul2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="0.00"
+        android:textColor="#003200"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView18"
+        app:layout_constraintStart_toEndOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="IPS :"
+        android:textColor="#003200"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/semesterMatkul2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="ganjil/genap 20XX"
+        android:textColor="#003200"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintStart_toEndOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="128dp"
+        android:fontFamily="@font/poppins"
+        android:text="Semester :"
+        android:textColor="#003200"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/textNamaMhsDosen2"
+        app:layout_constraintStart_toStartOf="@+id/textNamaMhsDosen2"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaMhsDosen2" />
+
+    <TextView
+        android:id="@+id/textNamaMhsDosen2"
+        android:layout_width="376dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Harriko Nur Harzeki"
+        android:textColor="#00320A"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

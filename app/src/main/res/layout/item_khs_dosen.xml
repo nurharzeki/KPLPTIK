@@ -18,7 +18,7 @@
         android:visibility="visible">
 
         <TextView
-            android:id="@+id/semesterView"
+            android:id="@+id/semesterViewDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -44,7 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tahunAjar"
+            android:id="@+id/tahunAjarDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -54,7 +54,7 @@
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textViewSemester"
-            app:layout_constraintTop_toBottomOf="@+id/semesterView" />
+            app:layout_constraintTop_toBottomOf="@+id/semesterViewDosen" />
 
         <TextView
             android:id="@+id/textsks"
@@ -69,7 +69,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/sksTotal"
+            android:id="@+id/sksTotalDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
@@ -80,7 +80,7 @@
             app:layout_constraintTop_toTopOf="@+id/textsks" />
 
         <TextView
-            android:id="@+id/ips"
+            android:id="@+id/ipsDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -98,9 +98,9 @@
             android:layout_marginEnd="4dp"
             android:text="IPS :"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/ips"
-            app:layout_constraintEnd_toStartOf="@+id/ips"
-            app:layout_constraintTop_toTopOf="@+id/ips"
+            app:layout_constraintBottom_toBottomOf="@+id/ipsDosen"
+            app:layout_constraintEnd_toStartOf="@+id/ipsDosen"
+            app:layout_constraintTop_toTopOf="@+id/ipsDosen"
             app:layout_constraintVertical_bias="0.333" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
