@@ -20,28 +20,27 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_mhs_pa"
         android:layout_width="360dp"
-        android:layout_height="528dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginBottom="30dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
         tools:listitem="@layout/item_mhs_pa" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="List Mahasiswa Bimbingan"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#0A3C14"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_mhs_pa"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

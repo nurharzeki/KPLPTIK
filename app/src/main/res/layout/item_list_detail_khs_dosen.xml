@@ -4,14 +4,14 @@
     android:layout_width="366dp"
     android:layout_height="100dp"
     android:layout_margin="4dp"
-    app:cardBackgroundColor="#D6D6D6"
+    app:cardBackgroundColor="@color/abuabu1"
     app:cardCornerRadius="16dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/borderblack"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/borderblack">
 
         <TextView
             android:id="@+id/nilaiKhsDosen"
