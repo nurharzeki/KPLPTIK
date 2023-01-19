@@ -28,7 +28,7 @@ class AdapterListDetailKhsMatkul(private val data: ArrayList<ListDetailKhsMatkul
 
         fun bind(data: ListDetailKhsMatkul){
             nama_matkul_khs.text = data.nama_matkul_khs
-            sks_khs.text = data.sks_matkul
+            sks_khs.text = data.sks_matkul.toString()
             nilai_matkul_khs.text = data.nilai_matkul
         }
 
@@ -41,7 +41,7 @@ class AdapterListDetailKhsMatkul(private val data: ArrayList<ListDetailKhsMatkul
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListDetailKhsMatkulHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_list_detail_khs_matkul,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_detail_khs,parent,false)
         return ListDetailKhsMatkulHolder(view,listDetailKhsMatkulListener)
     }
 

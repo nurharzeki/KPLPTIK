@@ -82,13 +82,13 @@
     <androidx.recyclerview.widget.RecyclerView
 
         android:id="@+id/rvListDetailKhs"
-        android:layout_width="401dp"
-        android:layout_height="560dp"
+        android:layout_width="370dp"
+        android:layout_height="520dp"
         android:layout_marginTop="32dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ipsmatkul"
-        tools:listitem="@layout/list_detail_khs_matkul" />
+        tools:listitem="@layout/item_detail_khs" />
 </androidx.constraintlayout.widget.ConstraintLayout>
