@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.R
 import com.kplptik.models.ListKhsMatkul
-import java.text.FieldPosition
 
 class AdapterListKhsMatkul (private val data: ArrayList<ListKhsMatkul>):
 
@@ -24,7 +23,7 @@ class AdapterListKhsMatkul (private val data: ArrayList<ListKhsMatkul>):
     }
 
     inner class listKhsMatkulHolder(itemView: View,listener: clickListener):RecyclerView.ViewHolder(itemView){
-        private val semester_mhs:TextView = itemView.findViewById(R.id.semesterMhs)
+        private val semester_mhs:TextView = itemView.findViewById(R.id.semesterView)
         private val tahun_ajar:TextView = itemView.findViewById(R.id.tahunAjar)
         private val sks_total:TextView = itemView.findViewById(R.id.sksTotal)
         private val ips:TextView = itemView.findViewById(R.id.ips)
