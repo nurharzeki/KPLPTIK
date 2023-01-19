@@ -11,11 +11,12 @@
 
         android:id="@+id/rvListDetailKhsDosen"
         android:layout_width="370dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ipsmatkul2"/>
+        app:layout_constraintTop_toBottomOf="@+id/ipsmatkul2" />
 
     <TextView
         android:id="@+id/ipsmatkul2"
@@ -71,12 +72,12 @@
         android:id="@+id/textNamaMhsDosen2"
         android:layout_width="376dp"
         android:layout_height="0dp"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="Harriko Nur Harzeki"
         android:textColor="#00320A"
-        android:textSize="26sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"

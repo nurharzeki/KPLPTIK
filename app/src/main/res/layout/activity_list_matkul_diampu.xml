@@ -21,27 +21,26 @@
         android:id="@+id/textListMatkul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="List Mata Kuliah"
         android:textColor="#003200"
-        android:textSize="30dp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListMatKulDiampu"
         android:layout_width="370dp"
-        android:layout_height="544dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828"
+        app:layout_constraintTop_toBottomOf="@+id/textListMatkul"
         tools:listitem="@layout/item_matkul_yang_diampu_dosen" />
 
     <ProgressBar
