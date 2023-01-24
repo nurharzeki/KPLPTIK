@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.kplptik.APIdatamodels.ProfilMahasiswaModel.ProfilMahasiswaResponse
 import com.kplptik.APIdatamodels.authentication.LogoutResponse
 import com.kplptik.databinding.ActivityProfileMahasiswaBinding
 import com.kplptik.networks.MainInterface
@@ -31,6 +32,47 @@ class ProfileMahasiswaActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
+
+
+        //
+        val client: MainInterface = RetrofitConfig().getService()
+
+        val call: Call<ProfilMahasiswaResponse> = client.profilmahasiswa("Bearer "+token)
+        call.enqueue(object : Callback<ProfilMahasiswaResponse> {
+            override fun onResponse(
+                call: Call<ProfilMahasiswaResponse>,
+                response: Response<ProfilMahasiswaResponse>
+            ) {
+                val respon: ProfilMahasiswaResponse? = response.body()
+                if (respon != null){
+//                    val list: List<Data> = respon.data as List<Data>
+//                    adapter.setListMatkul(list as ArrayList<DataItem>)
+                    binding.namaMahasiswaLogin.text = respon.profil?.namaMahasiswa
+                    binding.nimMahasiswaLogin.text = respon.profil?.nim
+                    binding.emailMahasiswaLogin.text = respon.profil?.email
+                    binding.noHpMahasiswaLogin.text = respon.profil?.noHp
+                    binding.alamatMahasiswaLogin.text = respon.profil?.alamat
+                    binding.alamatMahasiswaLogin.text = respon.profil?.alamat
+                    if (respon.profil?.jenisKelamin == "l"){
+                        binding.genderMahasiswaLogin.text = "Laki-laki"
+                    }else if (respon.profil?.jenisKelamin == "p"){
+                        binding.genderMahasiswaLogin.text = "Perempuan"
+                    }else{
+                        binding.genderMahasiswaLogin.text = "Mencurigakan hmmm?"
+                    }
+
+
+                }
+                Log.d("Hola!!", response.toString())
+            }
+
+            override fun onFailure(call: Call<ProfilMahasiswaResponse>, t: Throwable) {
+
+                Toast.makeText(this@ProfileMahasiswaActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+        })
+        //
+
 
         val buttonLogout = binding.buttonLogoutMahasiswa
 
