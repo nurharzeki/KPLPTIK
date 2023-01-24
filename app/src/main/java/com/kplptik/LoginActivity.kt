@@ -10,6 +10,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.kplptik.APIdatamodels.authentication.LoginResponse
+import com.kplptik.APIdatamodels.authentication.UserResponse
 import com.kplptik.databinding.ActivityLoginBinding
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
@@ -37,9 +38,25 @@ class LoginActivity : AppCompatActivity() {
         animationDrawable.start()
 
         val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
-        val ditemukan = sharedPref.getString("token", null)
+        val token = sharedPref.getString("token", null)
+        Log.e("Token ->", token.toString())
 
-//        if (ditemukan!= null){
+        val client: MainInterface = RetrofitConfig().getService()
+        val call: Call<UserResponse> = client.userCek("Bearer "+token)
+        call.enqueue(object : Callback<UserResponse>{
+            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+
+//        if (ditemukan!= null && dit){
+//
 //
 //        }
         val buttonLogin = binding.buttonLogin
