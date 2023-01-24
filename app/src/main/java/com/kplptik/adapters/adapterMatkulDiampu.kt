@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kplptik.APIdatamodels.MatkulDiampuModel.Data
 import com.kplptik.APIdatamodels.MatkulDiampuModel.DataItem
 import com.kplptik.R
 
@@ -33,6 +34,9 @@ class adapterMatkulDiampu (private var data: ArrayList<DataItem>):
         private val ruangan: TextView = itemView.findViewById(R.id.ruangGedungItem)
 
         fun bind(data: DataItem){
+
+            val id: DataItem = DataItem()
+            id.idMatkul
 
             nama_Matkul.text = data.namaMk
             jadwal.text = data.waktu

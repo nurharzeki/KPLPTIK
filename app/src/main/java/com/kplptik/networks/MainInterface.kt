@@ -3,12 +3,18 @@ package com.kplptik.networks
 
 import com.kplptik.APIdatamodels.MatkulDiampuModel.MatkulDiampuResponse
 import com.kplptik.APIdatamodels.ProfilDosenModel.ProfilDosenResponse
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Path
+import com.kplptik.APIdatamodels.authentication.LoginResponse
 import retrofit2.Call
+import retrofit2.http.*
 
 interface MainInterface {
+
+    @FormUrlEncoded
+    @POST("/api/login")
+    fun login(
+        @Field("username") username: String,
+        @Field("password") password:String
+    ): Call<LoginResponse>
 
     @GET("/api/list-matkul/{nip-dosen}")
     fun listmatkuldiampudosen(

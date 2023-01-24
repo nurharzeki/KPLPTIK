@@ -77,9 +77,10 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
 
         adapter.setOnClickListener(object: adapterMatkulDiampu.clickListener{
             override fun onItemClick(position: Int) {
-
+                val id: DataItem
                 val intent = Intent(this@ListMatkulDiampuActivity, DetailMatkulDosenActivity::class.java)
-//                intent.putExtra("nip!",  )
+                intent.putExtra("id-matkul", data[position].idMatkul)
+                Log.e("IDSekarang", data[position].toString())
                 startActivity(intent)
             }
         })
