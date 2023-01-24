@@ -104,11 +104,10 @@ class ProfileDosenActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        }
     }
+}
 
 //    fun onClickListener(view: View) {
 //        val logoutIntent = Intent(this@ProfileDosenActivity, LoginActivity::class.java)
 //        startActivity(logoutIntent)
 //    }
-}
