@@ -41,24 +41,34 @@ class LoginActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
-        val client: MainInterface = RetrofitConfig().getService()
-        val call: Call<UserResponse> = client.userCek("Bearer "+token)
-        call.enqueue(object : Callback<UserResponse>{
-            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                TODO("Not yet implemented")
-            }
+        if(token != null){
+            val client: MainInterface = RetrofitConfig().getService()
+            val call: Call<UserResponse> = client.userCek("Bearer "+token)
+            call.enqueue(object : Callback<UserResponse>{
+                override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                    val respon : UserResponse? = response.body()
 
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
+                    if (respon!=null && respon.role == "d"){
+                        intent = Intent(applicationContext, HomeDosenActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                    if (respon!=null && respon.role == "m"){
+                        intent = Intent(applicationContext, HomeMahasiswaActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
 
-        })
+                }
 
+                override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                    Toast.makeText(this@LoginActivity, "Jaringan anda bermasalah", Toast.LENGTH_SHORT).show()
+                    Log.e("Fail", t.localizedMessage.toString())
+                }
 
-//        if (ditemukan!= null && dit){
-//
-//
-//        }
+            })
+        }
+
         val buttonLogin = binding.buttonLogin
 
         buttonLogin.setOnClickListener {
