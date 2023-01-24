@@ -124,8 +124,7 @@ class LoginActivity : AppCompatActivity() {
                             intent = Intent(applicationContext, HomeMahasiswaActivity::class.java)
                             startActivity(intent)
                             finish()
-                        }
-                        else{
+                        }else{
                             Toast.makeText(this@LoginActivity,"Username dan password anda salah",Toast.LENGTH_SHORT).show()
                         }
                     }

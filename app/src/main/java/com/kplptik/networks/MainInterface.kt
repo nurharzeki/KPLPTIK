@@ -1,7 +1,7 @@
 package com.kplptik.networks
 
 
-import com.kplptik.APIdatamodels.MatkulDiampuModel.MatkulDiampuResponse
+import com.kplptik.APIdatamodels.ListV.ListMatkulDiampuResponse
 import com.kplptik.APIdatamodels.ProfilDosenModel.ProfilDosenResponse
 import com.kplptik.APIdatamodels.authentication.LoginResponse
 import com.kplptik.APIdatamodels.authentication.LogoutResponse
@@ -29,11 +29,10 @@ interface MainInterface {
         @Field("Authorization") token: String
     ): Call<LogoutResponse>
 
-    @GET("/api/list-matkul/{nip-dosen}")
+    @GET("/api/list-matkul")
     fun listmatkuldiampudosen(
-        @Header("Authorization") token: String,
-        @Path("nip-dosen") nip: String
-    ): Call<MatkulDiampuResponse>
+        @Header("Authorization") token: String
+    ): Call<ListMatkulDiampuResponse>
 
     @GET("/api/profil-dosen/{nip-dosen}")
     fun profildosen(
