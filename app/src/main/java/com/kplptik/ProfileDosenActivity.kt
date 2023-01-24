@@ -33,7 +33,7 @@ class ProfileDosenActivity : AppCompatActivity() {
 
         val client: MainInterface = RetrofitConfig().getService()
 
-        val call: Call<ProfilDosenResponse> = client.profildosen(" ","199308152022032017")
+        val call: Call<ProfilDosenResponse> = client.profildosen("Bearer "+token)
         call.enqueue(object : Callback<ProfilDosenResponse> {
             override fun onResponse(
                 call: Call<ProfilDosenResponse>,
@@ -50,11 +50,11 @@ class ProfileDosenActivity : AppCompatActivity() {
                     binding.fakultasDosenLogin.text = respon.data?.namaFak
                     binding.alamatDosenLogin.text = respon.data?.alamat
                     if (respon.data?.jenisKelamin == "l"){
-                        binding.genderDosenLogin.text = "Pria"
+                        binding.genderDosenLogin.text = "Laki-laki"
                     }else if (respon.data?.jenisKelamin == "p"){
-                        binding.genderDosenLogin.text = "Wanita"
+                        binding.genderDosenLogin.text = "Perempuan"
                     }else{
-                        binding.genderDosenLogin.text = "Kamu Apa?"
+                        binding.genderDosenLogin.text = "Mencurigakan hmmm?"
                     }
 
 

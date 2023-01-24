@@ -118,24 +118,24 @@
             app:layout_constraintTop_toBottomOf="@+id/card1">
 
             <TextView
-                android:id="@+id/jurusan_mahasiswa_login"
+                android:id="@+id/noHpMahasiswaLogin"
                 android:layout_width="245dp"
                 android:layout_height="53dp"
                 android:layout_gravity="end"
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
-                android:text="Sistem Informasi"
+                android:text="0823346"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/jurusan_mahasiswa_login2"
+                android:id="@+id/textsekiaan"
                 android:layout_width="134dp"
                 android:layout_height="53dp"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="center"
-                android:text="Jurusan"
+                android:text="No Hp"
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
@@ -152,24 +152,24 @@
             app:layout_constraintTop_toBottomOf="@+id/card2">
 
             <TextView
-                android:id="@+id/fakultas_mahasiswa_login"
+                android:id="@+id/alamatMahasiswaLogin"
                 android:layout_width="245dp"
                 android:layout_height="53dp"
                 android:layout_gravity="end"
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
-                android:text="Teknologi Informasi"
+                android:text="bumi"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/fakultas_mahasiswa_login2"
+                android:id="@+id/fakultas_mahasiswa_login2cjhcvh"
                 android:layout_width="134dp"
                 android:layout_height="53dp"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="center"
-                android:text="Fakultas"
+                android:text="Alamat"
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
@@ -208,39 +208,6 @@
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card5"
-            android:layout_width="379dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            app:cardCornerRadius="27dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card4">
-
-            <TextView
-                android:id="@+id/status_mahasiswa_login"
-                android:layout_width="245dp"
-                android:layout_height="53dp"
-                android:layout_gravity="end"
-                android:fontFamily="@font/poppins"
-                android:gravity="center"
-                android:text="Aktif/NonAktif"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/status_mahasiswa_login2"
-                android:layout_width="134dp"
-                android:layout_height="53dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="Status"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/buttonLogoutMahasiswa"
