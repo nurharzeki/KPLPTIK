@@ -1,17 +1,15 @@
 package com.kplptik
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.widget.TextView
 import android.widget.Toast
-import com.kplptik.APIdatamodels.MatkulDiampuModel.DataItem
-import com.kplptik.APIdatamodels.MatkulDiampuModel.MatkulDiampuResponse
-import com.kplptik.APIdatamodels.ProfilDosenModel.Data
+import androidx.appcompat.app.AppCompatActivity
 import com.kplptik.APIdatamodels.ProfilDosenModel.ProfilDosenResponse
+import com.kplptik.APIdatamodels.authentication.LogoutResponse
 import com.kplptik.databinding.ActivityProfileDosenBinding
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
@@ -28,6 +26,10 @@ class ProfileDosenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
+        val token = sharedPref.getString("token", null)
+        Log.e("Token ->", token.toString())
 
         val client: MainInterface = RetrofitConfig().getService()
 
@@ -65,10 +67,48 @@ class ProfileDosenActivity : AppCompatActivity() {
                 Toast.makeText(this@ProfileDosenActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
         })
+
+
+        val buttonLogout = binding.buttonLogoutDosen
+
+        buttonLogout.setOnClickListener {
+
+            val client: MainInterface = RetrofitConfig().getService()
+            val call: Call<LogoutResponse> = client.logout("Bearer " + token)
+            call.enqueue(object : Callback<LogoutResponse> {
+                override fun onResponse(
+                    call: Call<LogoutResponse>,
+                    response: Response<LogoutResponse>
+                ) {
+                    val respon: LogoutResponse? = response.body()
+                    if (respon != null){
+                        Toast.makeText(this@ProfileDosenActivity, respon.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+                override fun onFailure(call: Call<LogoutResponse>, t: Throwable) {
+                    Toast.makeText(
+                        applicationContext,
+                        "Fail calling response",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+            })
+            val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
+            with(sharedPref.edit()) {
+                putString("token", null)
+                putString("nama", null)
+                apply()
+            }
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        }
     }
 
-    fun onClickListener(view: View) {
-        val logoutIntent = Intent(this@ProfileDosenActivity, LoginActivity::class.java)
-        startActivity(logoutIntent)
-    }
+//    fun onClickListener(view: View) {
+//        val logoutIntent = Intent(this@ProfileDosenActivity, LoginActivity::class.java)
+//        startActivity(logoutIntent)
+//    }
 }
