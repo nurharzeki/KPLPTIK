@@ -109,8 +109,7 @@ class LoginActivity : AppCompatActivity() {
                             intent = Intent(applicationContext, HomeDosenActivity::class.java)
                             startActivity(intent)
                             finish()
-                        }
-                        if (respon!=null && respon.user?.role == "m") {
+                        } else if (respon!=null && respon.user?.role == "m") {
 
                             val token: String? = respon.authorization?.token
                             val namaUser: String? = respon.user.name
