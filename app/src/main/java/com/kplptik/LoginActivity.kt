@@ -107,22 +107,8 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this@LoginActivity, "Jaringan anda bermasalah", Toast.LENGTH_SHORT).show()
                         Log.e("Fail", t.localizedMessage.toString())
                     }
-
                 })
-
             }
         }
-
-//        fun onClickListener(view: View) {
-//            val homeDosenIntent = Intent(this@LoginActivity, HomeDosenActivity::class.java)
-//            startActivity(homeDosenIntent)
-//          Toast.makeText(this, "masok", Toast.LENGTH_SHORT).show()
-//        }
-//
-//        fun onButtonLogin2ClickListener(view: View) {
-//            val homeMahasiswaIntent = Intent(this@LoginActivity, HomeMahasiswaActivity::class.java)
-//            startActivity(homeMahasiswaIntent)
-//        }
-
     }
 }
