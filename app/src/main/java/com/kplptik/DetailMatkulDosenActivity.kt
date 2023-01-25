@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
-import com.kplptik.APIdatamodels.MatkulDiampuModel.DetailMatkulDiampuResponse
 import com.kplptik.databinding.ActivityDetailMatkulDosenBinding
 import com.kplptik.models.MatkulDiampu
 import com.kplptik.networks.MainInterface

@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.kplptik.APIdatamodels.MatkulDiampuModel.Data
-import com.kplptik.APIdatamodels.MatkulDiampuModel.DataItem
+import com.kplptik.APIdatamodels.ListV.DataItem
+
 import com.kplptik.R
 
 class adapterMatkulDiampu (private var data: ArrayList<DataItem>):
@@ -45,7 +45,7 @@ class adapterMatkulDiampu (private var data: ArrayList<DataItem>):
 
         init {
             itemView.setOnClickListener {
-                listener.onItemClick(adapterPosition)
+                listener.onItemClick(bindingAdapterPosition)
             }
         }
 
