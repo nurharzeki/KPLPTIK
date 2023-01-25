@@ -77,8 +77,6 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
         rvlistmatkul.layoutManager =LinearLayoutManager(this)
         rvlistmatkul.adapter = adapter
 
-//        val getNim = intent.getStringExtra("nim")
-//        binding.tvNimMhsLogKp.text = getNim.toString()
 
         adapter.setOnClickListener(object: adapterMatkulDiampu.clickListener{
             override fun onItemClick(position: Int) {
