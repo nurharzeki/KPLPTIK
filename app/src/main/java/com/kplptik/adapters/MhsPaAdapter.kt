@@ -5,14 +5,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.DataItem
 import com.kplptik.R
 import com.kplptik.models.MhsPa
 
-class MhsPaAdapter (private val data: ArrayList<MhsPa>):
+class MhsPaAdapter (private var data: ArrayList<DataItem>):
 
     RecyclerView.Adapter<MhsPaAdapter.listMhsPaHolder>(){
 
     private lateinit var mhsPaListener: clickListener
+
+    fun setListMahasiswa (data: ArrayList<DataItem>){
+        this.data = data
+        notifyDataSetChanged()
+    }
 
     interface clickListener {
         fun onItemClick(position: Int)
@@ -26,9 +32,9 @@ class MhsPaAdapter (private val data: ArrayList<MhsPa>):
         private val namaMhsPa: TextView = itemView.findViewById(R.id.textNamaMhsPa)
         private val nimMhsPa: TextView = itemView.findViewById(R.id.textNimMhsPa)
 
-        fun bind(data: MhsPa){
-            namaMhsPa.text = data.nama_mhs_pa
-            nimMhsPa.text = data.nim_mhs_pa
+        fun bind(data: DataItem){
+            namaMhsPa.text = data.namaMahasiswa
+            nimMhsPa.text = data.nim
         }
 
         init {
