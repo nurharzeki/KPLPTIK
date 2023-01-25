@@ -1,6 +1,7 @@
 package com.kplptik.networks
 
 
+import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.ListMahasiswaResponse
 import com.kplptik.APIdatamodels.ListV.ListMatkulDiampuResponse
 import com.kplptik.APIdatamodels.ProfilDosenModel.ProfilDosenResponse
 import com.kplptik.APIdatamodels.ProfilMahasiswaModel.ProfilMahasiswaResponse
@@ -44,4 +45,9 @@ interface MainInterface {
     fun profilmahasiswa(
         @Header("Authorization") token: String
     ): Call<ProfilMahasiswaResponse>
+
+    @GET("/api/listmahasiswa")
+    fun listMahasiswaBimbingan(
+        @Header("Authorization") token: String
+    ): Call<ListMahasiswaResponse>
 }
