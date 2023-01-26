@@ -1,14 +1,26 @@
 package com.kplptik
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.kplptik.APIdatamodels.KrsMahasiswaModel.DetailItem
+import com.kplptik.APIdatamodels.KrsMahasiswaModel.KrsMahasiswaResponse
+import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.DataItem
+import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.ListMahasiswaResponse
 import com.kplptik.adapters.KrsMahasiswaAdapter
 import com.kplptik.databinding.ActivityListKrsMahasiswaBinding
 import com.kplptik.models.KrsMahasiswa
+import com.kplptik.networks.MainInterface
+import com.kplptik.networks.RetrofitConfig
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ListKrsMahasiswaActivity : AppCompatActivity() {
     lateinit var rvListKrsMahasiswaActivity: RecyclerView
@@ -20,19 +32,44 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
         setContentView(binding.root)
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        val data = ArrayList<KrsMahasiswa>()
-        data.add(KrsMahasiswa("PBO C","Rabu (15.00 - 17.00)","H 2.5"))
-        data.add(KrsMahasiswa("APSI A","Senin (15.00 - 17.00)","H 2.4"))
-        data.add(KrsMahasiswa("MPSI","Kamis (15.00 - 17.00)","H 2.3"))
-        data.add(KrsMahasiswa("PPSI B","Senin (15.00 - 17.00)","H 2.6"))
-        data.add(KrsMahasiswa("AKDAT A","Jumat (15.00 - 17.00)","H 2.9"))
-        data.add(KrsMahasiswa("E-Bisnis C","Selasa (15.00 - 17.00)","H 2.10"))
-        data.add(KrsMahasiswa("TAKEL","Selasa (15.00 - 17.00)","H 2.2"))
-        data.add(KrsMahasiswa("E COMMERCE A","Kamis (15.00 - 17.00)","H 2.5"))
-        data.add(KrsMahasiswa("ISI B","Selasa (15.00 - 17.00)","H 2.5"))
+        val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
+        val token = sharedPref.getString("token", null)
+        Log.e("Token ->", token.toString())
+
+        val data = ArrayList<DetailItem>()
+//        data.add(KrsMahasiswa("PBO C","Rabu (15.00 - 17.00)","H 2.5"))
+//        data.add(KrsMahasiswa("APSI A","Senin (15.00 - 17.00)","H 2.4"))
+//        data.add(KrsMahasiswa("MPSI","Kamis (15.00 - 17.00)","H 2.3"))
+//        data.add(KrsMahasiswa("PPSI B","Senin (15.00 - 17.00)","H 2.6"))
+//        data.add(KrsMahasiswa("AKDAT A","Jumat (15.00 - 17.00)","H 2.9"))
+//        data.add(KrsMahasiswa("E-Bisnis C","Selasa (15.00 - 17.00)","H 2.10"))
+//        data.add(KrsMahasiswa("TAKEL","Selasa (15.00 - 17.00)","H 2.2"))
+//        data.add(KrsMahasiswa("E COMMERCE A","Kamis (15.00 - 17.00)","H 2.5"))
+//        data.add(KrsMahasiswa("ISI B","Selasa (15.00 - 17.00)","H 2.5"))
 
         rvListKrsMahasiswaActivity = binding.rvKrsKelas
         adapter = KrsMahasiswaAdapter(data)
+
+        val client: MainInterface = RetrofitConfig().getService()
+
+        val call: Call<KrsMahasiswaResponse> = client.listKrsMahasiswa("Bearer "+token)
+        call.enqueue(object : Callback<KrsMahasiswaResponse> {
+            override fun onResponse(
+                call: Call<KrsMahasiswaResponse>,
+                response: Response<KrsMahasiswaResponse>
+            ) {
+                val respon: KrsMahasiswaResponse? = response.body()
+                if (respon != null){
+                    val list: List<DetailItem> = respon.detail as List<DetailItem>
+                    adapter.setListMahasiswa(list as ArrayList<DetailItem>)
+                }
+                Log.d("Success", response.toString())
+            }
+
+            override fun onFailure(call: Call<KrsMahasiswaResponse>, t: Throwable) {
+                Toast.makeText(this@ListKrsMahasiswaActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+        })
 
         rvListKrsMahasiswaActivity.layoutManager = LinearLayoutManager(this)
         rvListKrsMahasiswaActivity.adapter = adapter
