@@ -55,12 +55,15 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
         val call: Call<KrsMahasiswaResponse> = client.listKrsMahasiswa("Bearer "+token)
         call.enqueue(object : Callback<KrsMahasiswaResponse> {
             override fun onResponse(
+
                 call: Call<KrsMahasiswaResponse>,
                 response: Response<KrsMahasiswaResponse>
             ) {
                 val respon: KrsMahasiswaResponse? = response.body()
                 if (respon != null){
+
                     val list: List<DetailItem> = respon.detail as List<DetailItem>
+                    binding.textSemesterKrs.text = list[0].semester
                     adapter.setListMahasiswa(list as ArrayList<DetailItem>)
                 }
                 Log.d("Success", response.toString())
