@@ -40,41 +40,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textviewsekian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="@font/poppins"
-        android:text="IPK : "
-        android:textColor="#003200"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/KhsSemester"
-        app:layout_constraintStart_toStartOf="@+id/KhsSemester"
-        app:layout_constraintTop_toBottomOf="@+id/KhsSemester" />
+<!--    <TextView-->
+<!--        android:id="@+id/textviewsekian"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:text="IPK : "-->
+<!--        android:textColor="#003200"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/KhsSemester"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/KhsSemester"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/KhsSemester" />-->
 
-    <TextView
-        android:id="@+id/ipk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="3.52"
-        android:textColor="#003200"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textviewsekian"
-        app:layout_constraintTop_toBottomOf="@+id/KhsSemester" />
+<!--    <TextView-->
+<!--        android:id="@+id/ipk"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="2dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:fontFamily="@font/poppins_semibold"-->
+<!--        android:text="3.52"-->
+<!--        android:textColor="#003200"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textviewsekian"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/KhsSemester" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListKhsSemester"
         android:layout_width="370dp"
         android:layout_height="0dp"
-        android:layout_marginTop="48dp"
 
+        android:layout_marginTop="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textviewsekian" />
+        app:layout_constraintTop_toBottomOf="@+id/KhsSemester" />
 </androidx.constraintlayout.widget.ConstraintLayout>
