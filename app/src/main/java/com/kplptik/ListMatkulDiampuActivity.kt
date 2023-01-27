@@ -61,11 +61,9 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
             ) {
                 val respon:ListMatkulDosenResponse? = response.body()
                 if (respon != null){
-                    val id_matkul : DataItem = DataItem()
+
                     val list: List<DataItem> = respon.data as List<DataItem>
                     adapter.setListMatkul(list as ArrayList<DataItem>)
-                    id_matkul.idMatkul.toString()
-                    Log.e("Id-mtkl", id_matkul.toString())
                     progressbar.visibility = View.GONE
                 }
                 Log.d("Success", response.toString())
