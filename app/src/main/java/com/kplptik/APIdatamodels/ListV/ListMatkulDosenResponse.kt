@@ -2,7 +2,7 @@ package com.kplptik.APIdatamodels.ListV
 
 import com.google.gson.annotations.SerializedName
 
-data class ListMatkulDiampuResponse(
+data class ListMatkulDosenResponse(
 
     @field:SerializedName("data")
     val data: List<DataItem?>? = null,
@@ -25,8 +25,11 @@ data class DataItem(
     @field:SerializedName("nama_mk")
     val namaMk: String? = null,
 
-    @field:SerializedName("waktu")
-    val waktu: String? = null,
+    @field:SerializedName("jam_kuliah")
+    val jamKuliah: String? = null,
+
+    @field:SerializedName("nama_hari")
+    val namaHari: String? = null,
 
     @field:SerializedName("kode_ruang")
     val kodeRuang: String? = null

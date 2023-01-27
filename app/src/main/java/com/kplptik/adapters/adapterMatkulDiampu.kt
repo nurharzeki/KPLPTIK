@@ -3,8 +3,11 @@ package com.kplptik.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.kplptik.APIdatamodels.ListV.Data
 import com.kplptik.APIdatamodels.ListV.DataItem
 
 import com.kplptik.R
@@ -30,16 +33,17 @@ class adapterMatkulDiampu (private var data: ArrayList<DataItem>):
 
     inner class listMatkulHolder(itemView: View, listener: clickListener): RecyclerView.ViewHolder(itemView) {
         private val nama_Matkul: TextView =itemView.findViewById(R.id.namaitemMatkul)
-        private val jadwal: TextView = itemView.findViewById(R.id.jadwalitem)
+        private val jadwal: TextView = itemView.findViewById(R.id.jadwalitem3)
+        private val jadwal2: TextView = itemView.findViewById(R.id.jadwalitem)
         private val ruangan: TextView = itemView.findViewById(R.id.ruangGedungItem)
+
 
         fun bind(data: DataItem){
 
-            val id: DataItem = DataItem()
-            id.idMatkul
 
             nama_Matkul.text = data.namaMk
-            jadwal.text = data.waktu
+            jadwal.text = data.namaHari
+            jadwal2.text = data.jamKuliah
             ruangan.text = data.kodeRuang
         }
 

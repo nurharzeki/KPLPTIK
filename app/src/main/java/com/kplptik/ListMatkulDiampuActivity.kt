@@ -1,20 +1,20 @@
 package com.kplptik
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.ListV.DataItem
-import com.kplptik.APIdatamodels.ListV.ListMatkulDiampuResponse
+import com.kplptik.APIdatamodels.ListV.ListMatkulDosenResponse
 import com.kplptik.adapters.adapterMatkulDiampu
 import com.kplptik.databinding.ActivityListMatkulDiampuBinding
-import com.kplptik.models.MatkulDiampu
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
 import retrofit2.Call
@@ -53,22 +53,25 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
         val client: MainInterface = RetrofitConfig().getService()
         progressbar.visibility = View.VISIBLE
 
-        val call: Call<ListMatkulDiampuResponse> = client.listmatkuldiampudosen("Bearer "+token)
-        call.enqueue(object : Callback<ListMatkulDiampuResponse>{
+        val call: Call<ListMatkulDosenResponse> = client.listmatkuldiampudosen("Bearer "+token)
+        call.enqueue(object : Callback<ListMatkulDosenResponse>{
             override fun onResponse(
-                call: Call<ListMatkulDiampuResponse>,
-                response: Response<ListMatkulDiampuResponse>
+                call: Call<ListMatkulDosenResponse>,
+                response: Response<ListMatkulDosenResponse>
             ) {
-                val respon:ListMatkulDiampuResponse? = response.body()
+                val respon:ListMatkulDosenResponse? = response.body()
                 if (respon != null){
+                    val id_matkul : DataItem = DataItem()
                     val list: List<DataItem> = respon.data as List<DataItem>
                     adapter.setListMatkul(list as ArrayList<DataItem>)
+                    id_matkul.idMatkul.toString()
+                    Log.e("Id-mtkl", id_matkul.toString())
                     progressbar.visibility = View.GONE
                 }
                 Log.d("Success", response.toString())
             }
 
-            override fun onFailure(call: Call<ListMatkulDiampuResponse>, t: Throwable) {
+            override fun onFailure(call: Call<ListMatkulDosenResponse>, t: Throwable) {
                 progressbar.visibility = View.GONE
                 Toast.makeText(this@ListMatkulDiampuActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
@@ -76,16 +79,18 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
 
         rvlistmatkul.layoutManager =LinearLayoutManager(this)
         rvlistmatkul.adapter = adapter
-
-
+//
+//
         adapter.setOnClickListener(object: adapterMatkulDiampu.clickListener{
+            @SuppressLint("SuspiciousIndentation")
             override fun onItemClick(position: Int) {
-                val idmatkul : Int
+
                 val intent = Intent(this@ListMatkulDiampuActivity, DetailMatkulDosenActivity::class.java)
-//                intent.putExtra("id-matkul", idmatkul )
 //                Log.e("IDSekarang", data[position].toString())
                 startActivity(intent)
             }
         })
+
+
     }
 }

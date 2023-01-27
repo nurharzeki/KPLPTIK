@@ -4,7 +4,9 @@ package com.kplptik.networks
 import com.kplptik.APIdatamodels.KhsMahasiswaModel.KhsMahasiswaResponse
 import com.kplptik.APIdatamodels.KrsMahasiswaModel.KrsMahasiswaResponse
 import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.ListMahasiswaResponse
-import com.kplptik.APIdatamodels.ListV.ListMatkulDiampuResponse
+import com.kplptik.APIdatamodels.ListV.DetailMatkulResponse
+
+import com.kplptik.APIdatamodels.ListV.ListMatkulDosenResponse
 import com.kplptik.APIdatamodels.ProfilDosenModel.ProfilDosenResponse
 import com.kplptik.APIdatamodels.ProfilMahasiswaModel.ProfilMahasiswaResponse
 import com.kplptik.APIdatamodels.authentication.LoginResponse
@@ -36,7 +38,13 @@ interface MainInterface {
     @GET("/api/list-matkul")
     fun listmatkuldiampudosen(
         @Header("Authorization") token: String
-    ): Call<ListMatkulDiampuResponse>
+    ): Call<ListMatkulDosenResponse>
+
+    @GET("/api/detail-matkul/{id_matkul}")
+    fun detailMatkuldosen(
+        @Header("Authorization") token: String,
+        @Path("id_matkul")idMatkul: Int
+    ): Call<DetailMatkulResponse>
 
     @GET("/api/profil-dosen")
     fun profildosen(

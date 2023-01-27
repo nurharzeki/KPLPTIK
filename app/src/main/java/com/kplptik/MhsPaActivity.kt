@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.DataItem
 import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.ListMahasiswaResponse
-import com.kplptik.APIdatamodels.ListV.ListMatkulDiampuResponse
+
 import com.kplptik.adapters.MhsPaAdapter
 import com.kplptik.databinding.ActivityMhsPaBinding
 import com.kplptik.models.MhsPa
