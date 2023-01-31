@@ -21,40 +21,26 @@
             android:id="@+id/semesterViewDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="6dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="1"
             android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/textViewSemester"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/textViewSemester" />
 
         <TextView
             android:id="@+id/textViewSemester"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Semester"
             android:textColor="#000000"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tahunAjarDosen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/poppins"
-            android:text="ganjil/genap 20XX"
-            android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewSemester"
-            app:layout_constraintTop_toBottomOf="@+id/semesterViewDosen" />
 
         <TextView
             android:id="@+id/textsks"

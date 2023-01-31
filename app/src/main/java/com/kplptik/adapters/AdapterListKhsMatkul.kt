@@ -21,8 +21,8 @@ class AdapterListKhsMatkul (private var data: ArrayList<DetailItem>):
         notifyDataSetChanged()
     }
 
-    interface clickListener{
-        fun onItemClick(position: Int)
+    interface clickListener : AdapterListKhsMatkulDosen.clickListener {
+        override fun onItemClick(position: Int)
     }
 
     fun setOnClickListener(listener : clickListener){

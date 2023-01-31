@@ -41,6 +41,8 @@ class ListKhsMhsActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+
+
         val data = ArrayList<DetailItem>()
 //        data.add(ListKhsMatkul(1,"Ganjil 2020",22, 3.55F))
 //        data.add(ListKhsMatkul(2,"Genap 2021",22,3.55F))

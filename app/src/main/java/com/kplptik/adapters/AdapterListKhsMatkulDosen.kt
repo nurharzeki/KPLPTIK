@@ -6,32 +6,34 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.R
-import com.kplptik.models.ListKhsDosen
 
-class AdapterListKhsMatkulDosen (private val data: ArrayList<ListKhsDosen>):
+class AdapterListKhsMatkulDosen(private var data: ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaModel.DetailItem>):
 
     RecyclerView.Adapter<AdapterListKhsMatkulDosen.listKhsMatkulDosenHolder>() {
 
     private lateinit var listKhsMatkulDosenListener:clickListener
 
+    fun setListKhsDosen (data: ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaModel.DetailItem>){
+        this.data = data
+        notifyDataSetChanged()
+    }
+
     interface clickListener{
         fun onItemClick(position: Int)
     }
 
-    fun setOnClickListener(listener : clickListener){
+    fun setOnClickListener(listener: AdapterListKhsMatkul.clickListener){
         listKhsMatkulDosenListener = listener
     }
 
     inner class listKhsMatkulDosenHolder(itemView: View,listener: clickListener):RecyclerView.ViewHolder(itemView){
         private val semester_mhs:TextView = itemView.findViewById(R.id.semesterViewDosen)
-        private val tahun_ajar:TextView = itemView.findViewById(R.id.tahunAjarDosen)
         private val sks_total:TextView = itemView.findViewById(R.id.sksTotalDosen)
         private val ips:TextView = itemView.findViewById(R.id.ipsDosen)
 
-        fun bind(data: ListKhsDosen){
-            semester_mhs.text = data.semester_mhs.toString()
-            tahun_ajar.text = data.tahun_ajar
-            sks_total.text = data.sks_total.toString()
+        fun bind(data: com.kplptik.APIdatamodels.KhsMahasiswaModel.DetailItem){
+            semester_mhs.text = data.semester.toString()
+            sks_total.text = data.jumlahSks.toString()
             ips.text = data.ips.toString()
         }
 

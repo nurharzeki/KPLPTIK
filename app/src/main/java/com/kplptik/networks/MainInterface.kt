@@ -3,6 +3,7 @@ package com.kplptik.networks
 
 import com.kplptik.APIdatamodels.DetailKhsMhs.DetailKhsMahasiswaResponse
 import com.kplptik.APIdatamodels.DetailMatkulMahasiswaModel.DetailMatkulMahasiswaResponse
+import com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.ListKhsDosenResponse
 import com.kplptik.APIdatamodels.KhsMahasiswaModel.KhsMahasiswaResponse
 import com.kplptik.APIdatamodels.KrsMahasiswaModel.KrsMahasiswaResponse
 import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.ListMahasiswaResponse
@@ -84,5 +85,11 @@ interface MainInterface {
         @Header("Authorization") token: String,
         @Path("id")id: Int
     ): Call<DetailKhsMahasiswaResponse>
+
+    @GET("api/list-khs-mhs/{nim}")
+    fun listKhsDosen(
+        @Header("Authorization") token: String,
+        @Path("nim")nim: String
+    ):Call<ListKhsDosenResponse>
 
 }
