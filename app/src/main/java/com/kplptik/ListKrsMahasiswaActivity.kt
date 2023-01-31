@@ -67,22 +67,38 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
                     adapter.setListMahasiswa(list as ArrayList<DetailItem>)
                 }
                 Log.d("Success", response.toString())
+
+                adapter.setOnClickListener(object: KrsMahasiswaAdapter.clickListener{
+                    override fun onItemClick(position: Int) {
+                        val detailKrsMhsIntent = Intent(this@ListKrsMahasiswaActivity, DetailMatkulMahasiswaActivity::class.java)
+                        if (respon != null) {
+                            detailKrsMhsIntent.putExtra("id_matkul", respon.detail?.get(position)?.idMk)
+                        }
+                        startActivity(detailKrsMhsIntent)
+                    }
+
+                })
+
             }
 
             override fun onFailure(call: Call<KrsMahasiswaResponse>, t: Throwable) {
                 Toast.makeText(this@ListKrsMahasiswaActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
+
+
+
         })
 
         rvListKrsMahasiswaActivity.layoutManager = LinearLayoutManager(this)
         rvListKrsMahasiswaActivity.adapter = adapter
 
-        adapter.setOnClickListener(object: KrsMahasiswaAdapter.clickListener{
-            override fun onItemClick(position: Int) {
-                val detailKrsMhsIntent = Intent(this@ListKrsMahasiswaActivity, DetailMatkulMahasiswaActivity::class.java)
-                startActivity(detailKrsMhsIntent)
-            }
-
-        })
+//        adapter.setOnClickListener(object: KrsMahasiswaAdapter.clickListener{
+//            override fun onItemClick(position: Int) {
+//                val detailKrsMhsIntent = Intent(this@ListKrsMahasiswaActivity, DetailMatkulMahasiswaActivity::class.java)
+//
+//                startActivity(detailKrsMhsIntent)
+//            }
+//
+//        })
     }
 }

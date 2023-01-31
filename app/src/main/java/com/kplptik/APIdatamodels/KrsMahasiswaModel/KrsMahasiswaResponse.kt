@@ -28,6 +28,9 @@ data class DetailItem(
     @field:SerializedName("id_mhs")
     val idMhs: Int? = null,
 
+    @field:SerializedName("id_mk")
+    val idMk: Int? = null,
+
     @field:SerializedName("alamat")
     val alamat: String? = null,
 
