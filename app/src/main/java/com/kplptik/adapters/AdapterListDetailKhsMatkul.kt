@@ -5,13 +5,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kplptik.APIdatamodels.DetailKhsMhs.DetailItem
 import com.kplptik.R
 import com.kplptik.models.ListDetailKhsMatkul
 
-class AdapterListDetailKhsMatkul(private val data: ArrayList<ListDetailKhsMatkul>) :
+class AdapterListDetailKhsMatkul(private var data: ArrayList<DetailItem>) :
 
     RecyclerView.Adapter<AdapterListDetailKhsMatkul.ListDetailKhsMatkulHolder>(){
     private lateinit var listDetailKhsMatkulListener: clickListener
+
+    fun setListDetailKhs (data: ArrayList<DetailItem>){
+        this.data = data
+        notifyDataSetChanged()
+    }
 
     interface clickListener{
         fun onItemClick(position: Int)
@@ -26,10 +32,10 @@ class AdapterListDetailKhsMatkul(private val data: ArrayList<ListDetailKhsMatkul
         private val sks_khs:TextView = itemView.findViewById(R.id.sksKhs)
         private val nilai_matkul_khs:TextView = itemView.findViewById(R.id.nilaiKhsMhs)
 
-        fun bind(data: ListDetailKhsMatkul){
-            nama_matkul_khs.text = data.nama_matkul_khs
-            sks_khs.text = data.sks_matkul.toString()
-            nilai_matkul_khs.text = data.nilai_matkul
+        fun bind(data: DetailItem){
+            nama_matkul_khs.text = data.namaMk
+            sks_khs.text = data.sks
+            nilai_matkul_khs.text = data.nilaiHuruf
         }
 
         init {

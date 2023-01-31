@@ -67,6 +67,20 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
                     progressbar.visibility = View.GONE
                 }
                 Log.d("Success", response.toString())
+
+                adapter.setOnClickListener(object: adapterMatkulDiampu.clickListener{
+                    @SuppressLint("SuspiciousIndentation")
+                    override fun onItemClick(position: Int) {
+
+                        val intent = Intent(this@ListMatkulDiampuActivity, DetailMatkulDosenActivity::class.java)
+//                Log.e("IDSekarang", data[position].toString())
+                        if (respon != null) {
+                            intent.putExtra("id_matkul", respon.data?.get(position)?.idMatkul)
+                        }
+                        startActivity(intent)
+                    }
+                })
+
             }
 
             override fun onFailure(call: Call<ListMatkulDosenResponse>, t: Throwable) {
@@ -79,15 +93,7 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
         rvlistmatkul.adapter = adapter
 //
 //
-        adapter.setOnClickListener(object: adapterMatkulDiampu.clickListener{
-            @SuppressLint("SuspiciousIndentation")
-            override fun onItemClick(position: Int) {
 
-                val intent = Intent(this@ListMatkulDiampuActivity, DetailMatkulDosenActivity::class.java)
-//                Log.e("IDSekarang", data[position].toString())
-                startActivity(intent)
-            }
-        })
 
 
     }

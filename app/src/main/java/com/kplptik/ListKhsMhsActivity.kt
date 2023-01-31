@@ -68,6 +68,19 @@ class ListKhsMhsActivity : AppCompatActivity() {
                     adapter.setListMahasiswa(list as ArrayList<DetailItem>)
                 }
                 Log.d("Success", response.toString())
+
+                adapter.setOnClickListener(object : AdapterListKhsMatkul.clickListener{
+                    override fun onItemClick(position: Int) {
+                        val intent = Intent(this@ListKhsMhsActivity, ListDetailKHSMatkulActivity::class.java)
+                        if (respon != null) {
+                            intent.putExtra("text_semester",respon.detail?.get(position)?.semester)
+                            intent.putExtra("ips",respon.detail?.get(position)?.ips)
+                            intent.putExtra("id_semester", respon.detail?.get(position)?.id)
+                        }
+                        startActivity(intent)
+                    }
+                })
+
             }
 
             override fun onFailure(call: Call<KhsMahasiswaResponse>, t: Throwable) {
@@ -78,11 +91,6 @@ class ListKhsMhsActivity : AppCompatActivity() {
         rvlistkhssemester.layoutManager = LinearLayoutManager(this)
         rvlistkhssemester.adapter = adapter
 
-        adapter.setOnClickListener(object : AdapterListKhsMatkul.clickListener{
-            override fun onItemClick(position: Int) {
-                val intent = Intent(this@ListKhsMhsActivity, ListDetailKHSMatkulActivity::class.java)
-                startActivity(intent)
-            }
-        })
+
     }
 }
