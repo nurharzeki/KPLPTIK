@@ -38,7 +38,7 @@ class ListKhsDosenActivity : AppCompatActivity() {
 
 
 
-        val data = ArrayList<DetailItem>()
+        val data = ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem>()
 
 //        data.add(ListKhsDosen(1,"Ganjil 2020",22, 3.55F))
 //        data.add(ListKhsDosen(2,"Genap 2021",22,3.55F))
@@ -53,10 +53,10 @@ class ListKhsDosenActivity : AppCompatActivity() {
 
         rvlistkhssemesterdosen = binding.rvListKhsSemesterDosen
         adapter = AdapterListKhsMatkulDosen(data)
-        //val getNim = intent.getStringExtra("nim")
+        val getNim = intent.getStringExtra("nimMahasiswa")
         val client: MainInterface = RetrofitConfig().getService()
 
-        val call: Call<ListKhsDosenResponse> = client.listKhsDosen("Bearer "+token,"2011521017")
+        val call: Call<ListKhsDosenResponse> = client.listKhsDosen("Bearer "+token,getNim.toString())
         call.enqueue(object : Callback<ListKhsDosenResponse> {
             override fun onResponse(
 
@@ -66,15 +66,15 @@ class ListKhsDosenActivity : AppCompatActivity() {
                 val respon: ListKhsDosenResponse? = response.body()
                 if (respon != null){
 
-                    val list: List<DetailItem> = respon.detail as List<DetailItem>
-//                    binding.textSemesterKrs.text = list[0].semester
-                    adapter.setListKhsDosen(list as ArrayList<DetailItem>)
+                    val list: List<com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem> = respon.detail as List<com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem>
+                    binding.textNamaMhsDosen.text = list[0].namaMahasiswa
+                    adapter.setListKhsDosen(list as ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem>)
                 }
                 Log.d("Success", response.toString())
 
                 adapter.setOnClickListener(object : AdapterListKhsMatkul.clickListener{
                     override fun onItemClick(position: Int) {
-                        val intent = Intent(this@ListKhsDosenActivity, ListDetailKHSMatkulActivity::class.java)
+                        val intent = Intent(this@ListKhsDosenActivity, ListDetailKhsDosenActivity::class.java)
                         if (respon != null) {
                             intent.putExtra("text_semester",respon.detail?.get(position)?.semester)
                             intent.putExtra("ips",respon.detail?.get(position)?.ips)

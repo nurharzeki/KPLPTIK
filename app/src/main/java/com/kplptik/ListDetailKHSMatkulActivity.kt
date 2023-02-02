@@ -67,8 +67,10 @@ class ListDetailKHSMatkulActivity : AppCompatActivity() {
                 if (respon != null){
 
                     val list: List<DetailItem> = respon.detail as List<DetailItem>
+
                     binding.semesterMatkul.text = getSem.toString()
                     binding.ipsmatkul.text = getIps.toString()
+
                     adapter.setListDetailKhs(list as ArrayList<DetailItem>)
                 }
                 Log.d("Success", response.toString())

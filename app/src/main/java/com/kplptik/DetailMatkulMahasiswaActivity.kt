@@ -33,7 +33,7 @@ class DetailMatkulMahasiswaActivity : AppCompatActivity() {
 
         val client: MainInterface = RetrofitConfig().getService()
 
-        val call: Call<DetailMatkulMahasiswaResponse> = client.detailMatkulMahasiswa("Bearer "+token,1)
+        val call: Call<DetailMatkulMahasiswaResponse> = client.detailMatkulMahasiswa("Bearer "+token,getId)
         call.enqueue(object : Callback<DetailMatkulMahasiswaResponse> {
             override fun onResponse(
                 call: Call<DetailMatkulMahasiswaResponse>,

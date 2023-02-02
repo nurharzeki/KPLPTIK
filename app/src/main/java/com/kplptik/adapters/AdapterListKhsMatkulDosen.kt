@@ -7,13 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.R
 
-class AdapterListKhsMatkulDosen(private var data: ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaModel.DetailItem>):
+class AdapterListKhsMatkulDosen(private var data: ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem>):
 
     RecyclerView.Adapter<AdapterListKhsMatkulDosen.listKhsMatkulDosenHolder>() {
 
     private lateinit var listKhsMatkulDosenListener:clickListener
 
-    fun setListKhsDosen (data: ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaModel.DetailItem>){
+    fun setListKhsDosen (data: ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem>){
         this.data = data
         notifyDataSetChanged()
     }
@@ -31,7 +31,7 @@ class AdapterListKhsMatkulDosen(private var data: ArrayList<com.kplptik.APIdatam
         private val sks_total:TextView = itemView.findViewById(R.id.sksTotalDosen)
         private val ips:TextView = itemView.findViewById(R.id.ipsDosen)
 
-        fun bind(data: com.kplptik.APIdatamodels.KhsMahasiswaModel.DetailItem){
+        fun bind(data: com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem){
             semester_mhs.text = data.semester.toString()
             sks_total.text = data.jumlahSks.toString()
             ips.text = data.ips.toString()

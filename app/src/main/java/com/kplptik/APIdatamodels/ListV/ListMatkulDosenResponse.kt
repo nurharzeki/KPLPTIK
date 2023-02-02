@@ -19,18 +19,9 @@ data class DataItem(
     @field:SerializedName("id_matkul")
     val idMatkul: Int? = null,
 
-    @field:SerializedName("id_jadwal")
-    val idJadwal: Int? = null,
-
     @field:SerializedName("nama_mk")
     val namaMk: String? = null,
 
-    @field:SerializedName("jam_kuliah")
-    val jamKuliah: String? = null,
-
-    @field:SerializedName("nama_hari")
-    val namaHari: String? = null,
-
-    @field:SerializedName("kode_ruang")
-    val kodeRuang: String? = null
+    @field:SerializedName("reg_mk")
+    val regMk: String? = null,
 )
