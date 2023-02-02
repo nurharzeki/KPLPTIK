@@ -65,6 +65,17 @@ class MhsPaActivity : AppCompatActivity() {
                     adapter.setListMahasiswa(list as ArrayList<DataItem>)
                 }
                 Log.d("Success", response.toString())
+
+                adapter.setOnClickListener(object: MhsPaAdapter.clickListener{
+                    override fun onItemClick(position: Int){
+                        val detailMhsPaIntent = Intent (this@MhsPaActivity, DetailMahasiswaDosenActivity::class.java)
+                        if (respon != null) {
+                            detailMhsPaIntent.putExtra("nimMahasiswa",respon.data?.get(position)?.nim)
+                        }
+                        startActivity(detailMhsPaIntent)
+                    }
+                })
+
             }
 
             override fun onFailure(call: Call<ListMahasiswaResponse>, t: Throwable) {
@@ -74,13 +85,6 @@ class MhsPaActivity : AppCompatActivity() {
 
         rvListMhsPaActivity.layoutManager = LinearLayoutManager(this)
         rvListMhsPaActivity.adapter = adapter
-
-        adapter.setOnClickListener(object: MhsPaAdapter.clickListener{
-            override fun onItemClick(position: Int){
-                val detailMhsPaIntent = Intent (this@MhsPaActivity, DetailMahasiswaDosenActivity::class.java)
-                startActivity(detailMhsPaIntent)
-            }
-        })
 
     }
 

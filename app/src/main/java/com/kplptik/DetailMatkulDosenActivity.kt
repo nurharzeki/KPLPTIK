@@ -4,22 +4,26 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.view.WindowManager
-import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.ListV.DetailMatkulResponse
+import com.kplptik.APIdatamodels.ListV.JadwalItem
+import com.kplptik.adapters.AdapterDetailMatkulDosen
 import com.kplptik.databinding.ActivityDetailMatkulDosenBinding
-import com.kplptik.models.MatkulDiampu
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.math.log
 
 class DetailMatkulDosenActivity : AppCompatActivity() {
 
+    lateinit var adapter: AdapterDetailMatkulDosen
     lateinit var binding: ActivityDetailMatkulDosenBinding
+    lateinit var rvlistjadwal: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMatkulDosenBinding.inflate(layoutInflater)
@@ -27,18 +31,14 @@ class DetailMatkulDosenActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
 
-//        val data: MatkulDiampu = MatkulDiampu(1,"DSIPW001","3 sks","Prof.Kemal.com","Pemograman Web", "Senin (08.00 - 12.00)", "H2.4")
-//        binding.namaMatkulDosen.text = data.nama_matkul
-//        binding.KodeMataKuliahDosen.text = data.kode_matkul
-//        binding.bobotMataKuliahDosen.text = data.bobot
-//        binding.dosPengDosen.text = data.pengampu
-//        binding.jadwalDosen.text = data.jadwal
-//        binding.kelasDosen.text = data.ruang_kuliah
-
         val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+        val data = ArrayList<JadwalItem>()
+
+        rvlistjadwal = binding.rvListJadwal
+        adapter = AdapterDetailMatkulDosen(data)
         val getId =intent.getIntExtra("id_matkul",1)
 
         val client: MainInterface = RetrofitConfig().getService()
@@ -51,14 +51,28 @@ class DetailMatkulDosenActivity : AppCompatActivity() {
                 response: Response<DetailMatkulResponse>
             ) {
                 val respon: DetailMatkulResponse? = response.body()
-                Log.e("SuccDetailResponse", response.body().toString())
-                binding.namaMatkulDosen.text = respon?.data?.namaMk
-                binding.KodeMataKuliahDosen.text =respon?.data?.regMk
-                binding.bobotMataKuliahDosen.text = respon?.data?.sks
-                binding.dosPengDosen.text = respon?.data?.namaDosen
-//                binding.jadwalDosen.text = respon?.data?.namaHari
-//                binding.jadwalDosen2.text = respon?.data?.jamKuliah
-//                binding.kelasDosen.text = respon?.data?.kodeRuang
+                Log.d("SuccDetailResponse", response.body().toString())
+
+                if (respon != null) {
+
+                    binding.namaMatkulDosen.text = respon.data?.namaMk
+                    binding.KodeMataKuliahDosen.text = respon.data?.regMk
+                    binding.bobotMataKuliahDosen.text = respon.data?.sks.toString()
+
+
+                    val list : List<JadwalItem> = respon.data?.jadwal as List<JadwalItem>
+                    adapter.setListJadwal(list as ArrayList<JadwalItem>)
+
+
+                }
+
+                adapter.setOnClickListener(object : AdapterDetailMatkulDosen.clickListener{
+                    override fun onItemClick(position: Int) {
+                        
+//                        Toast.makeText(this@DetailMatkulDosenActivity, "owch", Toast.LENGTH_SHORT).show()
+                    }
+                })
+
             }
 
             override fun onFailure(call: Call<DetailMatkulResponse>, t: Throwable) {
@@ -66,5 +80,7 @@ class DetailMatkulDosenActivity : AppCompatActivity() {
             }
 
         })
+        rvlistjadwal.layoutManager = LinearLayoutManager(this)
+        rvlistjadwal.adapter = adapter
     }
 }

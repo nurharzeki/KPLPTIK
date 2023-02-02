@@ -31,45 +31,15 @@
             app:layout_constraintVertical_bias="0.228" />
 
         <TextView
-            android:id="@+id/jadwalitem"
+            android:id="@+id/kodeMatkulDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:fontFamily="@font/poppins"
-            android:text="jam menit"
+            android:text="JSI001"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/jadwalitem3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toEndOf="@+id/jadwalitem3"
-            app:layout_constraintTop_toBottomOf="@+id/namaitemMatkul"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="@+id/namaitemMatkul"
+            app:layout_constraintTop_toBottomOf="@+id/namaitemMatkul" />
 
-        <TextView
-            android:id="@+id/jadwalitem3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="HARI"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.048"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/namaitemMatkul"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/ruangGedungItem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="RUANG DEDUNG"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/jadwalitem"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.078"
-            app:layout_constraintStart_toEndOf="@+id/jadwalitem"
-            app:layout_constraintTop_toTopOf="@+id/jadwalitem"
-            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
