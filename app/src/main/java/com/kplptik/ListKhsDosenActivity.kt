@@ -76,9 +76,11 @@ class ListKhsDosenActivity : AppCompatActivity() {
                     override fun onItemClick(position: Int) {
                         val intent = Intent(this@ListKhsDosenActivity, ListDetailKhsDosenActivity::class.java)
                         if (respon != null) {
-                            intent.putExtra("text_semester",respon.detail?.get(position)?.semester)
+                            intent.putExtra("semester",respon.detail?.get(position)?.semester)
                             intent.putExtra("ips",respon.detail?.get(position)?.ips)
-                            intent.putExtra("id_semester", respon.detail?.get(position)?.id)
+                            intent.putExtra("nim",getNim)
+                            intent.putExtra("nama",respon.detail?.get(position)?.namaMahasiswa)
+                            intent.putExtra("id",respon.detail?.get(position)?.id)
                         }
                         startActivity(intent)
                     }
