@@ -2,20 +2,18 @@ package com.kplptik
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.DataItem
 import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.ListMahasiswaResponse
-
 import com.kplptik.adapters.MhsPaAdapter
 import com.kplptik.databinding.ActivityMhsPaBinding
-import com.kplptik.models.MhsPa
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
 import retrofit2.Call
@@ -36,6 +34,9 @@ class MhsPaActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+        val progressBar = binding.pbListMhsPa
+        progressBar.visibility = View.GONE
+
         val data = ArrayList<DataItem>()
 //        data.add(MhsPa("Hafiz Aulia","2011522028"))
 //        data.add(MhsPa("Harriko Zeki","2011522001"))
@@ -52,6 +53,7 @@ class MhsPaActivity : AppCompatActivity() {
         adapter = MhsPaAdapter(data)
 
         val client: MainInterface = RetrofitConfig().getService()
+        progressBar.visibility = View.VISIBLE
 
         val call: Call<ListMahasiswaResponse> = client.listMahasiswaBimbingan("Bearer "+token)
         call.enqueue(object : Callback<ListMahasiswaResponse> {
@@ -75,11 +77,12 @@ class MhsPaActivity : AppCompatActivity() {
                         startActivity(detailMhsPaIntent)
                     }
                 })
-
+                progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<ListMahasiswaResponse>, t: Throwable) {
                 Toast.makeText(this@MhsPaActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                progressBar.visibility = View.GONE
             }
         })
 

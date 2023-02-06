@@ -36,7 +36,7 @@ class AdapterListDetailKhsMatkulDosen(private var data: ArrayList<DetailKhsItem>
 
         fun bind(data: DetailKhsItem){
             nama_matkul_khs.text = data.namaMk
-            sks_khs.text = data.sks.toString()
+            sks_khs.text = data.sks.toString() + " SKS"
             nilai_matkul_khs.text = data.nilaiHuruf
         }
 

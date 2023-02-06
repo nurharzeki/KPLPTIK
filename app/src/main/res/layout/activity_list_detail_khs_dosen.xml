@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListDetailKhsDosenActivity"
-    android:background="@drawable/background2">
+    android:background="@drawable/background2"
+    tools:context=".ListDetailKhsDosenActivity">
 
     <androidx.recyclerview.widget.RecyclerView
 
@@ -24,47 +24,23 @@
         android:id="@+id/ipsmatkul2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="0.00"
-        android:textColor="#003200"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView18"
-        app:layout_constraintStart_toEndOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins"
-        android:text="IPS :"
-        android:textColor="#003200"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/kosong3"
+        android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintEnd_toEndOf="@+id/semesterMatkul2"
+        app:layout_constraintStart_toStartOf="@+id/semesterMatkul2"
+        app:layout_constraintTop_toBottomOf="@+id/semesterMatkul2" />
 
     <TextView
         android:id="@+id/semesterMatkul2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="ganjil/genap 20XX"
-        android:textColor="#003200"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView17"
-        app:layout_constraintStart_toEndOf="@+id/textView17" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="128dp"
-        android:fontFamily="@font/poppins"
-        android:text="Semester :"
-        android:textColor="#003200"
+        android:text="@string/kosong6"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textNamaMhsDosen2"
         app:layout_constraintStart_toStartOf="@+id/textNamaMhsDosen2"
@@ -77,12 +53,25 @@
         android:layout_marginTop="64dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Harriko Nur Harzeki"
-        android:textColor="#00320A"
+        android:text="@string/kosong6"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pbListDetailKhsDosen"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

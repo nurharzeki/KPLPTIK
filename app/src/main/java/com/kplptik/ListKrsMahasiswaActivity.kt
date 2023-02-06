@@ -2,20 +2,18 @@ package com.kplptik
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.KrsMahasiswaModel.DetailItem
 import com.kplptik.APIdatamodels.KrsMahasiswaModel.KrsMahasiswaResponse
-import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.DataItem
-import com.kplptik.APIdatamodels.ListMahasiswaBimbinganModel.ListMahasiswaResponse
 import com.kplptik.adapters.KrsMahasiswaAdapter
 import com.kplptik.databinding.ActivityListKrsMahasiswaBinding
-import com.kplptik.models.KrsMahasiswa
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
 import retrofit2.Call
@@ -36,6 +34,9 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+        val progressBar = binding.pbListKrsMhs
+        progressBar.visibility = View.GONE
+
         val data = ArrayList<DetailItem>()
 //        data.add(KrsMahasiswa("PBO C","Rabu (15.00 - 17.00)","H 2.5"))
 //        data.add(KrsMahasiswa("APSI A","Senin (15.00 - 17.00)","H 2.4"))
@@ -51,19 +52,15 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
         adapter = KrsMahasiswaAdapter(data)
 
         val client: MainInterface = RetrofitConfig().getService()
+        progressBar.visibility = View.VISIBLE
 
         val call: Call<KrsMahasiswaResponse> = client.listKrsMahasiswa("Bearer "+token)
         call.enqueue(object : Callback<KrsMahasiswaResponse> {
-            override fun onResponse(
-
-                call: Call<KrsMahasiswaResponse>,
-                response: Response<KrsMahasiswaResponse>
-            ) {
+            override fun onResponse( call: Call<KrsMahasiswaResponse>, response: Response<KrsMahasiswaResponse>) {
                 val respon: KrsMahasiswaResponse? = response.body()
                 if (respon != null){
-
                     val list: List<DetailItem> = respon.detail as List<DetailItem>
-                    binding.textSemesterKrs.text = list[0].semester
+                    binding.textSemesterKrs.text = "Semester : " + list[0].semester
                     adapter.setListMahasiswa(list as ArrayList<DetailItem>)
                 }
                 Log.d("Success", response.toString())
@@ -76,29 +73,20 @@ class ListKrsMahasiswaActivity : AppCompatActivity() {
                         }
                         startActivity(detailKrsMhsIntent)
                     }
-
                 })
-
+                progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<KrsMahasiswaResponse>, t: Throwable) {
                 Toast.makeText(this@ListKrsMahasiswaActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                progressBar.visibility = View.GONE
             }
-
-
 
         })
 
         rvListKrsMahasiswaActivity.layoutManager = LinearLayoutManager(this)
         rvListKrsMahasiswaActivity.adapter = adapter
 
-//        adapter.setOnClickListener(object: KrsMahasiswaAdapter.clickListener{
-//            override fun onItemClick(position: Int) {
-//                val detailKrsMhsIntent = Intent(this@ListKrsMahasiswaActivity, DetailMatkulMahasiswaActivity::class.java)
-//
-//                startActivity(detailKrsMhsIntent)
-//            }
-//
-//        })
+
     }
 }

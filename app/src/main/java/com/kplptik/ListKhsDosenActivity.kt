@@ -36,8 +36,6 @@ class ListKhsDosenActivity : AppCompatActivity() {
         Log.e("Token ->", token.toString())
 
 
-
-
         val data = ArrayList<com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.DetailItem>()
 
 //        data.add(ListKhsDosen(1,"Ganjil 2020",22, 3.55F))

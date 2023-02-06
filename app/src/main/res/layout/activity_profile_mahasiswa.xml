@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileMahasiswaActivity"
-    android:background="@drawable/background2">
+    android:background="@drawable/background2"
+    tools:context=".ProfileMahasiswaActivity">
 
     <ImageView
         android:id="@+id/bg_green_profile"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Nama Mahasiswa yang Login"
+        android:text="~~~~~~~~~"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light_italic"
-        android:text="NIM Isinya Angka"
+        android:text="@string/kosong6"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -59,173 +59,196 @@
         app:layout_constraintTop_toBottomOf="@+id/nama_mahasiswa_login" />
 
     <ScrollView
+        android:id="@+id/svProfilMahasiswa"
         android:layout_width="match_parent"
         android:layout_height="348dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bg_green_profile">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card1"
-            android:layout_width="379dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="21dp"
-            android:orientation="horizontal"
-            app:cardCornerRadius="27dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bg_green_profile">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
+                android:layout_marginTop="21dp"
+                android:layout_marginRight="@dimen/margin_profil"
+                android:orientation="horizontal"
+                app:cardCornerRadius="27dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bg_green_profile">
 
-            <TextView
-                android:id="@+id/email_mahasiswa_login"
-                android:layout_width="245dp"
-                android:layout_height="53dp"
-                android:layout_gravity="end"
-                android:fontFamily="@font/poppins"
-                android:gravity="center"
-                android:text="simahasiswayglogin@gmail.com"
-                android:textColor="#000000"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/email_mahasiswa_login"
+                    android:layout_width="245dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/kosong6"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/email_mahasiswa_login2"
-                android:layout_width="134dp"
-                android:layout_height="53dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="E-Mail"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/email_mahasiswa_login2"
+                    android:layout_width="134dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="E-Mail"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card2"
-            android:layout_width="379dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            app:cardCornerRadius="27dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card1">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/margin_profil"
+                android:orientation="horizontal"
+                app:cardCornerRadius="27dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card1">
 
-            <TextView
-                android:id="@+id/noHpMahasiswaLogin"
-                android:layout_width="245dp"
-                android:layout_height="53dp"
-                android:layout_gravity="end"
-                android:fontFamily="@font/poppins"
-                android:gravity="center"
-                android:text="0823346"
-                android:textColor="#000000"
-                android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/noHpMahasiswaLogin"
+                    android:layout_width="245dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/kosong6"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/textsekiaan"
-                android:layout_width="134dp"
-                android:layout_height="53dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="No Hp"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/textsekiaan"
+                    android:layout_width="134dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="No Hp"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card3"
-            android:layout_width="379dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            app:cardCornerRadius="27dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card2">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/margin_profil"
+                android:orientation="horizontal"
+                app:cardCornerRadius="27dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card2">
 
-            <TextView
-                android:id="@+id/alamatMahasiswaLogin"
-                android:layout_width="245dp"
-                android:layout_height="53dp"
-                android:layout_gravity="end"
-                android:fontFamily="@font/poppins"
-                android:gravity="center"
-                android:text="bumi"
-                android:textColor="#000000"
-                android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/alamatMahasiswaLogin"
+                    android:layout_width="245dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/kosong6"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/fakultas_mahasiswa_login2cjhcvh"
-                android:layout_width="134dp"
-                android:layout_height="53dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="Alamat"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/fakultas_mahasiswa_login2cjhcvh"
+                    android:layout_width="134dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Alamat"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card4"
-            android:layout_width="379dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            app:cardCornerRadius="27dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card3">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/margin_profil"
+                android:orientation="horizontal"
+                app:cardCornerRadius="27dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card3">
 
-            <TextView
-                android:id="@+id/gender_mahasiswa_login"
-                android:layout_width="245dp"
-                android:layout_height="53dp"
-                android:layout_gravity="end"
-                android:fontFamily="@font/poppins"
-                android:gravity="center"
-                android:text="Laki-laki/Perempuan"
-                android:textColor="#000000"
-                android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/gender_mahasiswa_login"
+                    android:layout_width="245dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/kosong6"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/gender_mahasiswa_login2"
-                android:layout_width="134dp"
-                android:layout_height="53dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="Jenis Kelamin"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/gender_mahasiswa_login2"
+                    android:layout_width="134dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Jenis Kelamin"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
 
 
-        <Button
-            android:id="@+id/buttonLogoutMahasiswa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="24dp"
-            android:background="#F44336"
-            android:text="Logout"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:onClick="onClickListener"
-            app:layout_constraintEnd_toEndOf="@+id/textLayoutPassword"
-            app:layout_constraintStart_toStartOf="@+id/textLayoutPassword"
-            app:layout_constraintTop_toBottomOf="@+id/textLayoutPassword" />
+            <Button
+                android:id="@+id/buttonLogoutMahasiswa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                android:background="#F44336"
+                android:onClick="onClickListener"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/margin_profil"
+                app:layout_constraintEnd_toEndOf="@+id/textLayoutPassword"
+                app:layout_constraintStart_toStartOf="@+id/textLayoutPassword"
+                app:layout_constraintTop_toBottomOf="@+id/textLayoutPassword" />
         </LinearLayout>
     </ScrollView>
 
+    <ProgressBar
+        android:id="@+id/pbProfilMahasiswa"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

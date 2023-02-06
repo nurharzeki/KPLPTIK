@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileDosenActivity"
-    android:background="@drawable/background2">
+    android:background="@drawable/background2"
+    tools:context=".ProfileDosenActivity">
 
     <ImageView
         android:id="@+id/bg_green_profile2"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Nama Dosen yang Login"
+        android:text="~~~~~~~~~~~"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light_italic"
-        android:text="NIP Isinya Angka"
+        android:text="@string/kosong6"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -59,8 +59,10 @@
         app:layout_constraintTop_toBottomOf="@+id/nama_dosen_login" />
 
     <ScrollView
+        android:id="@+id/svProfilDosen"
         android:layout_width="match_parent"
         android:layout_height="348dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bg_green_profile2">
@@ -69,14 +71,16 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
-                android:layout_width="379dp"
-                android:layout_height="53dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="14dp"
+                android:layout_marginRight="8dp"
                 android:orientation="horizontal"
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -90,9 +94,9 @@
                     android:layout_gravity="end"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="simahasiswayglogin@gmail.com"
+                    android:text="@string/kosong6"
                     android:textColor="#000000"
-                    android:textSize="12sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/email_dosen_login2"
@@ -108,9 +112,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card2"
-                android:layout_width="379dp"
-                android:layout_height="53dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/margin_profil"
                 android:orientation="horizontal"
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -124,7 +130,7 @@
                     android:layout_gravity="end"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="Sistem Informasi"
+                    android:text="@string/kosong6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -142,9 +148,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
-                android:layout_width="379dp"
-                android:layout_height="53dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/margin_profil"
                 android:orientation="horizontal"
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -158,7 +166,7 @@
                     android:layout_gravity="end"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="Teknologi Informasi"
+                    android:text="@string/kosong6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -176,9 +184,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card8"
-                android:layout_width="379dp"
-                android:layout_height="53dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/margin_profil"
                 android:orientation="horizontal"
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -192,7 +202,7 @@
                     android:layout_gravity="end"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="Padang"
+                    android:text="@string/kosong6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -210,9 +220,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card4"
-                android:layout_width="379dp"
-                android:layout_height="53dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_profil"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/margin_profil"
                 android:orientation="horizontal"
                 app:cardCornerRadius="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -226,7 +238,7 @@
                     android:layout_gravity="end"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="Laki-laki/Perempuan"
+                    android:text="@string/kosong6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -251,12 +263,27 @@
                 android:background="#F44336"
                 android:onClick="onClickListener"
                 android:text="Logout"
+                android:textAllCaps="false"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/textLayoutPassword"
                 app:layout_constraintStart_toStartOf="@+id/textLayoutPassword"
                 app:layout_constraintTop_toBottomOf="@+id/textLayoutPassword" />
         </LinearLayout>
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pbProfilDosen"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

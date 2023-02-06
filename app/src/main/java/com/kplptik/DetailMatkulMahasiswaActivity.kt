@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import com.kplptik.APIdatamodels.DetailMatkulMahasiswaModel.DetailMatkulMahasiswaResponse
@@ -29,9 +30,16 @@ class DetailMatkulMahasiswaActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+        val progressBar = binding.pbDetailMatkulMhs
+        val cardView = binding.cvDetailMatkulMhs
+
+        progressBar.visibility = View.GONE
+        cardView.visibility = View.GONE
+
         val getId =intent.getIntExtra("id_matkul",1)
 
         val client: MainInterface = RetrofitConfig().getService()
+        progressBar.visibility = View.VISIBLE
 
         val call: Call<DetailMatkulMahasiswaResponse> = client.detailMatkulMahasiswa("Bearer "+token,getId)
         call.enqueue(object : Callback<DetailMatkulMahasiswaResponse> {
@@ -46,7 +54,7 @@ class DetailMatkulMahasiswaActivity : AppCompatActivity() {
 //                    binding.namaDosenLogin.text = respon.data?.namaDosen
                     binding.namaMatkulMahasiswa.text = respon.data?.namaMk
                     binding.KodeMataKuliahMahasiswa.text = respon.data?.regMk
-                    binding.bobotMataKuliahMahasiswa.text = respon.data?.sks
+                    binding.bobotMataKuliahMahasiswa.text = respon.data?.sks + " SKS"
                     binding.dosPengMahasiswa.text = respon.data?.namaDosen
                     binding.jadwalHariMahasiswa.text = respon.data?.namaHari
                     binding.jadwalJamMahasiswa.text = respon.data?.jamKuliah
@@ -54,11 +62,15 @@ class DetailMatkulMahasiswaActivity : AppCompatActivity() {
 
                 }
                 Log.d("Hola!!", response.toString())
+
+                progressBar.visibility = View.GONE
+                cardView.visibility = View.VISIBLE
             }
 
             override fun onFailure(call: Call<DetailMatkulMahasiswaResponse>, t: Throwable) {
-
                 Toast.makeText(this@DetailMatkulMahasiswaActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                progressBar.visibility = View.GONE
+                cardView.visibility = View.VISIBLE
             }
         })
 

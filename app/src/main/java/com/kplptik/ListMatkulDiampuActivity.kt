@@ -37,7 +37,7 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
-        val progressbar = binding.progressBarListMatkul
+        val progressbar = binding.pbListMatkul
         progressbar.visibility = View.GONE
 
         val adapter: adapterMatkulDiampu = adapterMatkulDiampu(ArrayList())
@@ -64,7 +64,7 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
 
                     val list: List<DataItem> = respon.data as List<DataItem>
                     adapter.setListMatkul(list as ArrayList<DataItem>)
-                    progressbar.visibility = View.GONE
+
                 }
                 Log.d("Success", response.toString())
 
@@ -73,19 +73,19 @@ class ListMatkulDiampuActivity : AppCompatActivity() {
                     override fun onItemClick(position: Int) {
 
                         val intent = Intent(this@ListMatkulDiampuActivity, DetailMatkulDosenActivity::class.java)
-//                Log.e("IDSekarang", data[position].toString())
+//                      Log.e("IDSekarang", data[position].toString())
                         if (respon != null) {
                             intent.putExtra("id_matkul", respon.data?.get(position)?.idMatkul)
                         }
                         startActivity(intent)
                     }
                 })
-
+                progressbar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<ListMatkulDosenResponse>, t: Throwable) {
-                progressbar.visibility = View.GONE
                 Toast.makeText(this@ListMatkulDiampuActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                progressbar.visibility = View.GONE
             }
         })
 

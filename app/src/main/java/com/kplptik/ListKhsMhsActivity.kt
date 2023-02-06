@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.WindowManager
 import android.widget.Adapter
 import android.widget.Toast
@@ -41,7 +42,8 @@ class ListKhsMhsActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
-
+        val progresBar = binding.pbListKhsMhs
+        progresBar.visibility = View.GONE
 
         val data = ArrayList<DetailItem>()
 //        data.add(ListKhsMatkul(1,"Ganjil 2020",22, 3.55F))
@@ -54,17 +56,13 @@ class ListKhsMhsActivity : AppCompatActivity() {
         adapter = AdapterListKhsMatkul(data)
 
         val client: MainInterface = RetrofitConfig().getService()
+        progresBar.visibility = View.VISIBLE
 
         val call: Call<KhsMahasiswaResponse> = client.listKhsMahasiswa("Bearer "+token)
         call.enqueue(object : Callback<KhsMahasiswaResponse> {
-            override fun onResponse(
-
-                call: Call<KhsMahasiswaResponse>,
-                response: Response<KhsMahasiswaResponse>
-            ) {
+            override fun onResponse( call: Call<KhsMahasiswaResponse>, response: Response<KhsMahasiswaResponse> ) {
                 val respon: KhsMahasiswaResponse? = response.body()
                 if (respon != null){
-
                     val list: List<DetailItem> = respon.detail as List<DetailItem>
 //                    binding.textSemesterKrs.text = list[0].semester
                     adapter.setListMahasiswa(list as ArrayList<DetailItem>)
@@ -82,17 +80,17 @@ class ListKhsMhsActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 })
-
+                progresBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<KhsMahasiswaResponse>, t: Throwable) {
                 Toast.makeText(this@ListKhsMhsActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                progresBar.visibility = View.GONE
             }
         })
 
         rvlistkhssemester.layoutManager = LinearLayoutManager(this)
         rvlistkhssemester.adapter = adapter
-
 
     }
 }

@@ -31,7 +31,14 @@ class ProfileDosenActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+        val scrollView = binding.svProfilDosen
+        val progressBar = binding.pbProfilDosen
+
+        scrollView.visibility = View.GONE
+        progressBar.visibility = View.GONE
+
         val client: MainInterface = RetrofitConfig().getService()
+        progressBar.visibility = View.VISIBLE
 
         val call: Call<ProfilDosenResponse> = client.profildosen("Bearer "+token)
         call.enqueue(object : Callback<ProfilDosenResponse> {
@@ -60,11 +67,15 @@ class ProfileDosenActivity : AppCompatActivity() {
 
                 }
                 Log.d("Hola!!", response.toString())
+
+                scrollView.visibility = View.VISIBLE
+                progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<ProfilDosenResponse>, t: Throwable) {
-
                 Toast.makeText(this@ProfileDosenActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                scrollView.visibility = View.VISIBLE
+                progressBar.visibility = View.GONE
             }
         })
 
@@ -74,6 +85,8 @@ class ProfileDosenActivity : AppCompatActivity() {
         buttonLogout.setOnClickListener {
 
             val client: MainInterface = RetrofitConfig().getService()
+            progressBar.visibility = View.VISIBLE
+
             val call: Call<LogoutResponse> = client.logout("Bearer " + token)
             call.enqueue(object : Callback<LogoutResponse> {
                 override fun onResponse(
@@ -84,25 +97,25 @@ class ProfileDosenActivity : AppCompatActivity() {
                     if (respon != null){
                         Toast.makeText(this@ProfileDosenActivity, respon.message, Toast.LENGTH_SHORT).show()
                     }
+                    val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
+                    with(sharedPref.edit()) {
+                        putString("token", null)
+                        putString("nama", null)
+                        apply()
+                    }
+                    intent = Intent(applicationContext, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
+                    progressBar.visibility = View.GONE
                 }
                 override fun onFailure(call: Call<LogoutResponse>, t: Throwable) {
-                    Toast.makeText(
-                        applicationContext,
-                        "Fail calling response",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this@ProfileDosenActivity, "Jaringan anda bermasalah", Toast.LENGTH_SHORT).show()
+                    progressBar.visibility = View.GONE
                 }
 
             })
-            val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
-            with(sharedPref.edit()) {
-                putString("token", null)
-                putString("nama", null)
-                apply()
-            }
-            intent = Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+
         }
     }
 }

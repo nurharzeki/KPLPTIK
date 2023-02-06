@@ -1,22 +1,18 @@
 package com.kplptik
 
 import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
-import android.widget.Adapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.DetailKhsMhs.DetailItem
 import com.kplptik.APIdatamodels.DetailKhsMhs.DetailKhsMahasiswaResponse
-import com.kplptik.APIdatamodels.KhsMahasiswaModel.KhsMahasiswaResponse
 import com.kplptik.adapters.AdapterListDetailKhsMatkul
-import com.kplptik.adapters.AdapterListKhsMatkul
 import com.kplptik.databinding.ActivityListDetailKhsMatkulBinding
-import com.kplptik.models.ListDetailKhsMatkul
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
 import retrofit2.Call
@@ -43,6 +39,9 @@ class ListDetailKHSMatkulActivity : AppCompatActivity() {
         val getSem = intent.getStringExtra("text_semester")
         val getIps = intent.getStringExtra("ips")
 
+        val progresBar = binding.pbListDetailKhsMatkul
+        progresBar.visibility = View.GONE
+
         val data = ArrayList<DetailItem>()
 //        data.add(ListDetailKhsMatkul(1,"Manajemen Proyek Sistem Informasi",3,"A"))
 //        data.add(ListDetailKhsMatkul(2,"Pemrograman Teknologi Bergerak",3,"B+"))
@@ -55,21 +54,17 @@ class ListDetailKHSMatkulActivity : AppCompatActivity() {
         adapter = AdapterListDetailKhsMatkul(data)
 
         val client: MainInterface = RetrofitConfig().getService()
+        progresBar.visibility = View.VISIBLE
 
         val call: Call<DetailKhsMahasiswaResponse> = client.detailKhsMahasiswa("Bearer "+token,getId)
         call.enqueue(object : Callback<DetailKhsMahasiswaResponse> {
-            override fun onResponse(
-
-                call: Call<DetailKhsMahasiswaResponse>,
-                response: Response<DetailKhsMahasiswaResponse>
-            ) {
+            override fun onResponse( call: Call<DetailKhsMahasiswaResponse>, response: Response<DetailKhsMahasiswaResponse> ) {
                 val respon: DetailKhsMahasiswaResponse? = response.body()
                 if (respon != null){
 
                     val list: List<DetailItem> = respon.detail as List<DetailItem>
-
-                    binding.semesterMatkul.text = getSem.toString()
-                    binding.ipsmatkul.text = getIps.toString()
+                    binding.semesterMatkul.text = "Semester " + getSem.toString()
+                    binding.ipsmatkul.text = "IPS : " + getIps.toString()
 
                     adapter.setListDetailKhs(list as ArrayList<DetailItem>)
                 }
@@ -80,11 +75,12 @@ class ListDetailKHSMatkulActivity : AppCompatActivity() {
 
                     }
                 })
-
+                progresBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<DetailKhsMahasiswaResponse>, t: Throwable) {
                 Toast.makeText(this@ListDetailKHSMatkulActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                progresBar.visibility = View.GONE
             }
         })
 

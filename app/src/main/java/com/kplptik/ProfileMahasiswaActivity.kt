@@ -2,9 +2,9 @@ package com.kplptik
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -33,9 +33,14 @@ class ProfileMahasiswaActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+        val scrollView = binding.svProfilMahasiswa
+        val progressBar = binding.pbProfilMahasiswa
 
-        //
+        scrollView.visibility = View.GONE
+        progressBar.visibility = View.GONE
+
         val client: MainInterface = RetrofitConfig().getService()
+        progressBar.visibility = View.VISIBLE
 
         val call: Call<ProfilMahasiswaResponse> = client.profilmahasiswa("Bearer "+token)
         call.enqueue(object : Callback<ProfilMahasiswaResponse> {
@@ -61,17 +66,19 @@ class ProfileMahasiswaActivity : AppCompatActivity() {
                         binding.genderMahasiswaLogin.text = "Mencurigakan hmmm?"
                     }
 
-
                 }
                 Log.d("Hola!!", response.toString())
+
+                scrollView.visibility = View.VISIBLE
+                progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<ProfilMahasiswaResponse>, t: Throwable) {
-
                 Toast.makeText(this@ProfileMahasiswaActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                scrollView.visibility = View.VISIBLE
+                progressBar.visibility = View.GONE
             }
         })
-        //
 
 
         val buttonLogout = binding.buttonLogoutMahasiswa
@@ -79,6 +86,8 @@ class ProfileMahasiswaActivity : AppCompatActivity() {
         buttonLogout.setOnClickListener {
 
             val client: MainInterface = RetrofitConfig().getService()
+            progressBar.visibility = View.VISIBLE
+
             val call: Call<LogoutResponse> = client.logout("Bearer " + token)
             call.enqueue(object : Callback<LogoutResponse> {
                 override fun onResponse(
@@ -89,25 +98,25 @@ class ProfileMahasiswaActivity : AppCompatActivity() {
                     if (respon != null){
                         Toast.makeText(this@ProfileMahasiswaActivity, respon.message, Toast.LENGTH_SHORT).show()
                     }
+
+                    val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
+                    with(sharedPref.edit()) {
+                        putString("token", null)
+                        putString("nama", null)
+                        apply()
+                    }
+                    intent = Intent(applicationContext, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
+                    progressBar.visibility = View.GONE
                 }
                 override fun onFailure(call: Call<LogoutResponse>, t: Throwable) {
-                    Toast.makeText(
-                        applicationContext,
-                        "Fail calling response",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText( applicationContext,"Fail calling response", Toast.LENGTH_SHORT).show()
+                    progressBar.visibility = View.GONE
                 }
 
             })
-            val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
-            with(sharedPref.edit()) {
-                putString("token", null)
-                putString("nama", null)
-                apply()
-            }
-            intent = Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
         }
     }
 }

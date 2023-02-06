@@ -2,15 +2,13 @@ package com.kplptik
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import com.kplptik.APIdatamodels.authentication.LoginResponse
+import androidx.appcompat.app.AppCompatActivity
 import com.kplptik.APIdatamodels.authentication.UserResponse
 import com.kplptik.databinding.ActivityHomeMahasiswaBinding
-import com.kplptik.databinding.ActivityLoginBinding
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
 import retrofit2.Call

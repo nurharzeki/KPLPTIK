@@ -1,7 +1,6 @@
 package com.kplptik
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,14 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.DetailKhsDosenModel.DetailKhsDosenResponse
 import com.kplptik.APIdatamodels.DetailKhsDosenModel.DetailKhsItem
-import com.kplptik.APIdatamodels.KhsMahasiswaBimbinganModel.ListKhsDosenResponse
-import com.kplptik.adapters.AdapterListDetailKhsMatkul
 import com.kplptik.adapters.AdapterListDetailKhsMatkulDosen
-import com.kplptik.adapters.AdapterListKhsMatkul
 import com.kplptik.databinding.ActivityListDetailKhsDosenBinding
-import com.kplptik.databinding.ActivityListDetailKhsMatkulBinding
-import com.kplptik.models.ListDetailKhsMatkul
-import com.kplptik.models.ListDetailKhsMatkulDosen
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
 import retrofit2.Call
@@ -71,8 +64,8 @@ class ListDetailKhsDosenActivity : AppCompatActivity() {
 
                     val list: List<DetailKhsItem> = respon.detailKhs as List<DetailKhsItem>
                     binding.textNamaMhsDosen2.text = getNama
-                    binding.semesterMatkul2.text = getSemester
-                    binding.ipsmatkul2.text = getIps
+                    binding.semesterMatkul2.text = "Semester "+getSemester
+                    binding.ipsmatkul2.text = "IPS : "+getIps
                     adapter.setListDetailKhs(list as ArrayList<DetailKhsItem>)
                 }
                 Log.d("Success", response.toString())

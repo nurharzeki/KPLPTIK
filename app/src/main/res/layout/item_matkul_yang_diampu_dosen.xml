@@ -3,25 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/itemMatkul"
     android:layout_width="match_parent"
-    android:layout_height="65dp"
-    android:layout_margin="4dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
     android:layout_marginTop="3dp"
+    android:layout_marginRight="16dp"
     android:layout_marginBottom="3dp"
     app:cardBackgroundColor="@color/abuabu1"
-    app:cardCornerRadius="6dp">
+    app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/borderblack">
 
         <TextView
             android:id="@+id/namaitemMatkul"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="NAMA MATA KULIAH"
             android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +39,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/poppins"
             android:text="JSI001"
             android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/namaitemMatkul"
             app:layout_constraintTop_toBottomOf="@+id/namaitemMatkul" />
 

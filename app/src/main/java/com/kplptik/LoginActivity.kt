@@ -3,14 +3,14 @@ package com.kplptik
 import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.kplptik.APIdatamodels.authentication.LoginResponse
-import com.kplptik.APIdatamodels.authentication.UserResponse
 import com.kplptik.databinding.ActivityLoginBinding
 import com.kplptik.networks.MainInterface
 import com.kplptik.networks.RetrofitConfig
@@ -73,6 +73,12 @@ class LoginActivity : AppCompatActivity() {
 
         buttonLogin.setOnClickListener {
 
+            val progressBar = binding.pbLogin
+            val textLayoutUsername = binding.textLayoutUsername
+            val textLayoutPassword = binding.textLayoutPassword
+
+            progressBar.visibility = View.GONE
+
             val username = binding.editUsername.getText().toString()
             val password = binding.editPassword.getText().toString()
             Log.e("Login Res ->", username + " " + password)
@@ -86,6 +92,10 @@ class LoginActivity : AppCompatActivity() {
             }
             else{
             val client: MainInterface = RetrofitConfig().getService()
+
+                progressBar.visibility = View.VISIBLE
+                textLayoutUsername.visibility = View.GONE
+                textLayoutPassword.visibility = View.GONE
 
                 val call: Call<LoginResponse> =client.login(username, password)
                 call.enqueue(object: Callback<LoginResponse>{
@@ -126,11 +136,17 @@ class LoginActivity : AppCompatActivity() {
                         }else{
                             Toast.makeText(this@LoginActivity,"Username dan password anda salah",Toast.LENGTH_SHORT).show()
                         }
+                        progressBar.visibility = View.GONE
+                        textLayoutUsername.visibility = View.VISIBLE
+                        textLayoutPassword.visibility = View.VISIBLE
                     }
 
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                         Toast.makeText(this@LoginActivity, "Jaringan anda bermasalah", Toast.LENGTH_SHORT).show()
                         Log.e("Fail", t.localizedMessage.toString())
+                        progressBar.visibility = View.GONE
+                        textLayoutUsername.visibility = View.VISIBLE
+                        textLayoutPassword.visibility = View.VISIBLE
                     }
                 })
             }

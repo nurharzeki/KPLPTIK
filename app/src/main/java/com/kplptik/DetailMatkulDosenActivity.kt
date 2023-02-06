@@ -1,11 +1,11 @@
 package com.kplptik
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kplptik.APIdatamodels.ListV.DetailMatkulResponse
@@ -35,6 +35,11 @@ class DetailMatkulDosenActivity : AppCompatActivity() {
         val token = sharedPref.getString("token", null)
         Log.e("Token ->", token.toString())
 
+        val progressBar = binding.pbDetailMatkulDosen
+        val cardView = binding.cvDetailMatkulDosen
+        progressBar.visibility = View.GONE
+        cardView.visibility = View.GONE
+
         val data = ArrayList<JadwalItem>()
 
         rvlistjadwal = binding.rvListJadwal
@@ -42,6 +47,8 @@ class DetailMatkulDosenActivity : AppCompatActivity() {
         val getId =intent.getIntExtra("id_matkul",1)
 
         val client: MainInterface = RetrofitConfig().getService()
+        progressBar.visibility = View.VISIBLE
+
         val call: Call<DetailMatkulResponse> = client.detailMatkuldosen("Bearer "+token, getId)
         Log.e("SuccessToGetID", getId.toString())
 
@@ -57,26 +64,28 @@ class DetailMatkulDosenActivity : AppCompatActivity() {
 
                     binding.namaMatkulDosen.text = respon.data?.namaMk
                     binding.KodeMataKuliahDosen.text = respon.data?.regMk
-                    binding.bobotMataKuliahDosen.text = respon.data?.sks.toString()
+                    binding.bobotMataKuliahDosen.text = respon.data?.sks.toString() + " SKS"
 
 
                     val list : List<JadwalItem> = respon.data?.jadwal as List<JadwalItem>
                     adapter.setListJadwal(list as ArrayList<JadwalItem>)
 
-
                 }
 
                 adapter.setOnClickListener(object : AdapterDetailMatkulDosen.clickListener{
                     override fun onItemClick(position: Int) {
-                        
+
 //                        Toast.makeText(this@DetailMatkulDosenActivity, "owch", Toast.LENGTH_SHORT).show()
                     }
                 })
-
+                progressBar.visibility = View.GONE
+                cardView.visibility = View.VISIBLE
             }
 
             override fun onFailure(call: Call<DetailMatkulResponse>, t: Throwable) {
                 Log.e("FailDetailResponse", t.localizedMessage)
+                progressBar.visibility = View.GONE
+                cardView.visibility = View.VISIBLE
             }
 
         })

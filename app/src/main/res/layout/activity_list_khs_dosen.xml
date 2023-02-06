@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textviewblaaa" />
+        app:layout_constraintTop_toBottomOf="@+id/textviewblaaa"
+        tools:listitem="@layout/item_khs_dosen" />
 
     <TextView
         android:id="@+id/textviewblaaa"
@@ -28,7 +29,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:text="Kartu Hasil Studi"
-        android:textColor="#00320A"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +44,8 @@
         android:layout_marginTop="64dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Harriko Nur Harzeki"
-        android:textColor="#00320A"
+        android:text="@string/kosong6"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

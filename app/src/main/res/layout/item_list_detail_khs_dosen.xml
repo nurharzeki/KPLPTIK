@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_margin="4dp"
     app:cardBackgroundColor="@color/abuabu1"
-    app:cardCornerRadius="16dp">
+    app:cardCornerRadius="9dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,35 +23,27 @@
             android:text="A"
             android:textColor="@color/black"
 
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/namaMatkulKhsDosen"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/namaMatkulKhsDosen" />
-
-        <TextView
-            android:id="@+id/textskss2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="SKS"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/sksKhsDosen"
-            app:layout_constraintStart_toEndOf="@+id/sksKhsDosen"
-            app:layout_constraintTop_toTopOf="@+id/sksKhsDosen"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/namaMatkulKhsDosen"
-            android:layout_width="221dp"
-            android:layout_height="51dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:text="Manajemen Proyek Sistem Informasi"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nilaiKhsDosen"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.24000001" />
 
         <TextView
             android:id="@+id/sksKhsDosen"
